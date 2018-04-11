@@ -42,16 +42,44 @@ footer {
 	border-bottom: 0.05em dotted white;
 }
 
-#search {
-	width: 50%;
+#artist-search {
+	width: 30%;
 	padding: 0 0.3em;
-	margin: 0 auto;
+	margin: 20px;
+	background: white;
+	color: black;
+	
+}
+
+#location {
+	width: 30%;
+	padding: 0 0.3em;
+	margin: 20px;
+	background: white;
+	color: black;
+	display: inline;
+	
+	
 }
 
 #get-weather {
-	display: inline;
+	display: block;
+	width: 20%;
+	margin: 20px;
 }
 
 #city-input {
 	margin-bottom: 10%;
+}
+
+.error {
+	font-size: .4em;
+	color: red;
+	display: none;
+
+}
+
+.input-form {
+	width: 100%;
+	margin-bottom: 100px;
 }
