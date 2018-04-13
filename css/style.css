@@ -72,6 +72,8 @@ p {
 
 .info-container {
   color: white;
+  width: 80%;
+  margin: 0 auto;
 }
 
 /* CSS FOR INPUT FORM */
@@ -199,4 +201,8 @@ input:focus {
 
 footer.page-footer {
   margin: 0;
+}
+
+#hamburger {
+  color: white;
 }

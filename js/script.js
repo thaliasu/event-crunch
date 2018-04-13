@@ -27,6 +27,8 @@ $(document).ready(function() {
                         $(".artist-header").html(FilteredData[0].lineup);
                         $(".date").html(FilteredData[0].datetime);
                         $(".venue").html(FilteredData[0].venue.name);
+                        $(".status").html(FilteredData[0].offers[0].status);
+                        $(".tickets").html("<a href='"+FilteredData[0].offers[0].url+"' target='_blank'>Tickets</a>");
                       }
                       else if (FilteredData.length > 1) {
                           $.each(FilteredData, function(i, evt){
