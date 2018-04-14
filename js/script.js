@@ -8,13 +8,13 @@ $(document).ready(function() {
 	
 	$("#get-weather").click(function(e){
 		e.preventDefault();
-		
+		$(".progress").css("display", "block");
 		//prevent empty fields
 	   if($.trim($('#artist-search').val()) == ''){
 	      $(".error").css("display", "block").html("input cannot be left blank");
 	   } else {
 			$(".error").css("display", "none");
-			
+			$(".info-container").css("display", "block");
 			//artist field
 			var artistField = $("#artist-search").val();
 			$.getJSON("https://rest.bandsintown.com/artists/"+artistField+"/events?app_id="+bandKey, function(response){
@@ -25,14 +25,19 @@ $(document).ready(function() {
 
                         //$(".info-container").html("<h1 class='artist-header'>"+FilteredData[0].lineup+"</h1><div class='event-info'><p class='date'>"+FilteredData[0].datetime+"</p><p class='venue'>"+FilteredData[0].venue.name+"</p><p class='desc'>"+FilteredData[0].description+"</p></div>");
                         $(".artist-header").html(FilteredData[0].lineup);
-                        $(".date").html(FilteredData[0].datetime);
-                        $(".venue").html(FilteredData[0].venue.name);
+                        $(".date").html(new Date(FilteredData[0].datetime.replace(/-/g,"/")));
+                        $(".venue").html(FilteredData[0].venue.name+" - "+FilteredData[0].venue.city+", "+FilteredData[0].venue.region);
                         $(".status").html(FilteredData[0].offers[0].status);
                         $(".tickets").html("<a href='"+FilteredData[0].offers[0].url+"' target='_blank'>Tickets</a>");
                       }
                       else if (FilteredData.length > 1) {
                           $.each(FilteredData, function(i, evt){
-                          	$(".info-container").html("<h1 class='artist-header'>"+evt.lineup+"</h1><div class='event-info'><p class='date'>"+evt.datetime+"</p><p class='venue'>"+evt.venue.name+"</p></div>");
+                          	//$(".info-container").html("<h1 class='artist-header'>"+evt.lineup+"</h1><div class='event-info'><p class='date'>"+evt.datetime+"</p><p class='venue'>"+evt.venue.name+"</p></div>");
+                          	$(".artist-header").html(FilteredData[0].lineup);
+                        	$(".date").html(FilteredData[0].datetime);
+                        	$(".venue").html(FilteredData[0].venue.name);
+                        	$(".status").html(FilteredData[0].offers[0].status);
+                        	$(".tickets").html("<a href='"+FilteredData[0].offers[0].url+"' target='_blank'>Tickets</a>");
                           	if (i == FilteredData.length) {
                           		return false;
                           	}
@@ -47,8 +52,9 @@ $(document).ready(function() {
 			var locationField = $("#location").val();
 			$.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+locationField+",us&units=imperial&APPID="+weatherKey, 
 			function(data){
-				
+			
 			});
+			$(".progress").css("display", "none");
 			};
 		});
 	});

@@ -74,6 +74,20 @@ p {
   color: white;
   width: 80%;
   margin: 0 auto;
+  display: none;
+}
+
+  .info-container span {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+.date {
+  display: block;
+}
+
+.progress {
+  display: none;
 }
 
 /* CSS FOR INPUT FORM */
