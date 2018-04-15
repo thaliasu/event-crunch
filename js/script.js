@@ -155,10 +155,6 @@ $(document).ready(function() {
                       console.log(FilteredData);
       }); 
       
-      $.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+locationField+",us&units=imperial&APPID="+weatherKey, 
-      function(data){
-      
-      });
       $(".progress").css("display", "none");
       };
     
