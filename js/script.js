@@ -90,6 +90,7 @@ $(document).ready(function() {
 
                             //append a new row to body
                             var newDiv = $('<div></div>').attr('id', 'newRow' + i);
+                            newDiv.attr("class", "row");
               newDiv.appendTo('#output');
                               //in this row have two cols
                               
