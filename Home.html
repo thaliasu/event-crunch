@@ -41,10 +41,10 @@
         <h2 class="header center">Find the weather forecast of a music event near you</h2>
         <br><br>
       <div class="center input-form">
-			  	<input type="text" name="artist-search" id="artist-search" placeholder="search for an artist...">
-			  	<input type="text" name="location" id="location" placeholder="search for a city..."><span class="error"></span>
-			  	<a class="waves-effect waves-light btn-large" href="#" id="get-weather">Find Out!</a>
-        </div> 	
+          <input type="text" name="artist-search" id="artist-search" placeholder="search for an artist...">
+          <input type="text" name="location" id="location" placeholder="search for a city..."><span class="error"></span>
+          <a class="waves-effect waves-light btn-large" href="#" id="get-weather">Find Out!</a>
+        </div>  
       </div>
     </div>
     <div class="parallax"><video autoplay loop id="video-background" muted plays-inline>
@@ -55,21 +55,10 @@
 <div class="progress">
       <div class="indeterminate"></div>
   </div>
-<div class="row">
-  <div class="info-container">
-    <h1 class="artist-header"></h1>
-    <div class="event-info">
-      <div class="col s6">
-        <span>Date: </span><p class="date"></p>
-        <span>Venue: </span><p class="venue"></p>
-      </div>
-      <div class="col s6">
-        <span>Status: </span><p class="status"></p>
-        <span> Tickets: </span><p class="tickets"></p>
-      </div>
-    </div>
-</div>
 
+
+<div id="output" class="container">
+  <div class="nodata"></div>
 </div>
     
     
@@ -83,8 +72,15 @@
         
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
       <script src="js/script.js"></script>
+    <script 
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp-6VY-wJJpRRi32-TmBXu6aOUbTJiouQ&callback=initMap">
+    </script> 
+
+      
+   
+      
     </body>
   </html>
     
