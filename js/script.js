@@ -5,7 +5,7 @@ $(document).ready(function() {
   $(".nodata").html("");
   $("#output").html("");
   $('.button-collapse').sideNav();
-    $('.parallax').parallax();
+  $('.parallax').parallax();
   
   $("#get-weather").click(function(e){
     e.preventDefault();
@@ -22,21 +22,25 @@ $(document).ready(function() {
       var locationField = $("#location").val();
       $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"/events?app_id="+bandKey, function(response){
         console.log(response);
+        
         //only return shows where venue is = to the city they inputed
         var FilteredData = response.filter(function(elem){return (elem.venue.city == locationField) });
             
           
-                      if(FilteredData.length == 1){
-
-                        var newDiv = $('<div></div>').attr('id', 'newRow');
-             newDiv.attr("class", "row");
-              newDiv.appendTo('#output');
-                              //in this row have two cols
+          if(FilteredData.length == 1){
+            $('<h1>'+response[0].lineup[0]+'</h1>').appendTo('#output');
+                var newDiv = $('<div></div>').attr('id', 'newRow');
+                newDiv.attr("class", "row");
+                newDiv.appendTo('#output');
+                //in this row have two cols
                               
                 //BAND COl
-                              var newCol = $('<div></div>').attr('id', 'newCol');
-                              newCol.attr("class", "col s6");
+                var newCol = $('<div></div>').attr('id', 'newCol');
+                newCol.attr("class", "col s6");
                 newCol.appendTo(newDiv);
+
+                //artist name
+                
 
                 //Date
                 $('<span>Date: </span><p id="date"></p>').appendTo(newCol);
@@ -80,7 +84,7 @@ $(document).ready(function() {
                             */
                       }
                       else if (FilteredData.length > 1) {
-                          
+                          $('<h1>'+FilteredData[0].lineup+'</h1>').appendTo(newCol);
                           $.each(FilteredData, function(i, evt){
                             //$(".info-container").html("<h1 class='artist-header'>"+evt.lineup+"</h1><div class='event-info'><p class='date'>"+evt.datetime+"</p><p class='venue'>"+evt.venue.name+"</p></div>");
                             
@@ -98,6 +102,8 @@ $(document).ready(function() {
                               var newCol = $('<div></div>').attr('id', 'newCol' + i);
                               newCol.attr("class", "col s6");
                 newCol.appendTo(newDiv);
+
+                
 
                 //Date
                 $('<span>Date: </span><p id="date'+ i + '"></p>').appendTo(newCol);
