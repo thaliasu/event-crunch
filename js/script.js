@@ -39,9 +39,9 @@ $(document).ready(function() {
                 newCol.attr("class", "col s6");
                 newCol.appendTo(newDiv);
 
-                //artist name
-                $('<span>Artist: </span><p id="date"></p>').appendTo(newCol);
-                $("#artist").html(artistField);  //acceptable code?
+                //Artist Name
+                $('<span>Artist: </span><p id="artist"></p>').appendTo(newCol);
+                //data
 
                 //Date
                 $('<span>Date: </span><p id="date"></p>').appendTo(newCol);
@@ -175,7 +175,7 @@ $(document).ready(function() {
 
     });
 
-    
+
 
 
 
@@ -195,7 +195,7 @@ $(document).ready(function() {
       $(document).ready(function(){
     $('.parallax').parallax();
   });
-    
+
 
 
 
