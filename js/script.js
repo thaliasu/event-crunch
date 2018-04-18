@@ -175,6 +175,8 @@ $(document).ready(function() {
 
     });
 
+    
+
 
 
   function initMap(latC,lonC,current) {
@@ -188,6 +190,12 @@ $(document).ready(function() {
           map: map
         });
       }
+
+
+      $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+    
 
 
 
