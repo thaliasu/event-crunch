@@ -6,7 +6,7 @@
       <title>EventCrunch</title>
       <!-- CSS  -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <style>
@@ -14,6 +14,13 @@
       		color: white;
       		font-family: times new roman;
       		font-size: 40px;
+      	}
+          .parallax img {
+      		height: auto;
+      		width: 100%;
+      	}
+      	.parallax-container {
+      		min-height: 500px;
       	}
       	.row:after {
 		    content: "";
@@ -31,10 +38,21 @@
 		  margin: 0 1.5%;
 		  width: 30%;
 		}
-
-    h6 {
-      font-size: 20px;
-    }
+           @media only screen and (max-width : 992px) {
+        .parallax-container .section {
+            position: absolute;
+            top: 40%;
+        }
+            #index-banner .section {
+            top: 10%;
+            }
+        }
+          
+        @media only screen and (max-width : 600px) {
+            #index-banner .section {
+                top: 0;
+            }
+        }
 
       </style>
     </head>
@@ -42,81 +60,81 @@
 <body>
 
         <!-- Nav Bar -->
-<div class="navbar-fixed">
-    <nav class="z-depth-0">
+    
+   <nav class="z-depth-0">         
     <div class="nav-wrapper">
-      <a href="home.html" class="brand-logo left"><span class="logo white-text-text">EventCrunch</span></a>
+      <a id="logo-container" href="#" class="brand-logo">EventCrunch</a>    
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="home.html">Home</a></li>
+        <li><a href="Home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>  
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="home.html">Home</a></li>
+        <li><a href="Home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     </nav>
-</div>
 
-    <div class="divider"></div>
-    <br>
+
+<div class="parallax-container">
+                <div class="container row">
+                </div>
+                <div class="parallax"><img src="images/img6.jpg"></div>
+
+            </div>
 
    <div class="container row">
-   	<h5>Contact Us</h5>
+   	<h3 class="center">Contact Us</h3>
    </div>
-
-    <div class="divider"></div>
-    <br>
-
 
     <div class="container row">
     	<div class="row">
     		<div class="column1">
-    			<section><h6>Front-End Designers</h6>
+    			<section><p>Front-End Designers</p>
     			<br>
-    			<p><b>Nicole Bitner</b></p>
+    			<p>Nicole Bitner</p>
     			<p>123-4567</p>
     			<p>nb65@gmail.com</p>
 
     			<br>
-    			<p><b>Tanisha Calixte</b></p>
+    			<p>Tanisha Calixte</p>
     			<p>768-9943</p>
     			<p>tc456@yahoo.com</p>
 
 
     			<br>
-    			<p><b>Suhany Granda-Ruiz</b></p>
+    			<p>Suhany Granda-Ruiz</p>
     			<p>449-3345</p>
     			<p>sgr19@yahoo.com</p></section>
 
 
     		</div>
     		<div class="column2">
-    			<section><h6>Back-End Developers</h6>
+    			<section><p>Back-End Developers</p>
     			<br>
-    			<p><b>Quinten O'Neal</b></p>
+    			<p>Quinten O'Neal</p>
     			<p>555-9945</p>
     			<p>qon5@gmail.com</p>
 
 
     			<br>
-    			<p><b>Thalia Su</b></p>
+    			<p>Thalia Su</p>
     			<p>876-0067</p>
     			<p>ts483@gmail.com</p>
 
 
     			<br>
-    			<p><b>Max Armstrong</b></p>
+    			<p>Max Armstrong</p>
     			<p>344-0087</p>
     			<p>ma34@gmail.com</p>
     			</section>
 
     		</div>
     		<div class="column3">
-    			<section><h6>Miscellaneous</h6>
+    			<section><p>Miscellaneous</p>
     			<br>
     			<p>BandX Email: bandx@yahoo.com</p>
     			<p>BandX Phone: 555-9978</p>
@@ -146,6 +164,6 @@
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-      <script src="js/js.js"></script>
+      <script src="js/script.js"></script>
     </body>
   </html>
