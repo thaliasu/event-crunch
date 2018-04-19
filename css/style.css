@@ -14,9 +14,9 @@ body {
 p {
   line-height: 2rem;
   color: #fff;
-  font-family: azo-sans-web, sans-serif;
+  font-family: 'Nobile', sans-serif;
   font-style: normal;
-  font-weight: 300;
+ 
 }    
 
 
@@ -29,7 +29,7 @@ p {
 nav {
     color: #fff;
     background-color: #131313 !important;
-    font-family: azo-sans-web, sans-serif;
+    font-family: 'Comfortaa', cursive;
     font-style: normal;
     font-weight: 300;
 }
@@ -38,31 +38,42 @@ nav {
 /*CSS FOR SINGLE PAGE*/
 
 h2 {
-   font-family: azo-sans-web, sans-serif;
+   font-family: 'Comfortaa', cursive;
    font-style: normal;
    padding-top: 180px;
 } 
 
 h4 {
    color: #fff;
-   font-family: azo-sans-web, sans-serif;
+   font-family: 'Comfortaa', cursive;
    font-style: normal;
    font-weight: 300;    
 }
 
+
+
+
 /* CSS FOR INPUT FORM */
 
 .input-form a {
-background-color: #252754 !important;
+background-color: #280d1f !important;
 }
 
-a:active,
-a:hover {
+.input-form a:active,
+ .input-form a:hover {
   outline: 0;
-  background-color: #ff9800 !important;    
+  background-color: #e46e05 !important;    
 }
 
+nav li:active,
+nav li:hover {
+  outline: 0;
+  background-color: #e46e05 !important;  
+}
 
+.brand-logo {
+    
+}
 
 .wrap {
   margin-top: 20px;
@@ -100,7 +111,7 @@ a:hover {
 
 
 .button-collapse {
-  color: #000000;
+  color: #e46e05 ;
 }
 
 
@@ -109,6 +120,7 @@ a:hover {
 .parallax-container #video-background {
     width: 100%;
 }
+
 
 
 .parallax-container {
@@ -242,6 +254,9 @@ input:focus {
 }
 
 
+/* login page */
+
+
 
 
 @media only screen and (max-width : 992px) {
@@ -253,6 +268,9 @@ input:focus {
     top: 10%;
   }
 }
+
+
+
 
 @media only screen and (max-width : 600px) {
   #index-banner .section {
