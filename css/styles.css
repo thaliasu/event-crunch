@@ -1,0 +1,211 @@
+body {
+  background: url(images/img11.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #131313 !important;
+  
+    
+}
+
+
+
+/*login css*/
+
+#container:before {
+    background-image: url(img11.jpg);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#logo_bar {
+  background: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  color: white;
+  margin-bottom: -30px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#logo {
+  max-width: 50px;
+  max-height: 50px;
+  vertical-align: middle;
+}
+
+#form_box {
+  background: rgba(0, 0, 0, 0.5);
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1);    
+}
+
+
+#form_heading {
+  color: #ff7b00;
+  padding: 15px 0 0 10px;
+  font-family: 'Nobile', sans-serif;
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+#font_20 {
+  font-size: 15px;
+  color: #ff7b00;
+  font-family: 'Nobile', sans-serif;    
+}
+
+
+
+#font_21 {
+  font-size: 15px;
+  color: white;
+  font-family: 'Nobile', sans-serif;    
+}
+
+
+
+input {
+  background: none;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #DDDDDD;
+  color: white;
+  font-family: 'Raleway', 'arial';
+  font-weight: 100;
+  font-size: 17px;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(255, 123, 0, 1);
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgba(255, 123, 0, 1);
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 123, 0, 1);
+  border: 1px solid rgba(255, 123, 0, 1);    
+}
+
+input[type=submit] {
+   width: 210px; 
+     
+}
+
+::placeholder {
+    color: #8c8c8c !important;
+}
+
+a {
+  text-decoration: none;
+  color: antiquewhite;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+/*create css*/
+
+
+#form_box2 {
+  background: rgba(0, 0, 0, 0.5);
+  width: 380px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1);    
+}
+
+
+
+#form_heading2 {
+  color: #ff7b00;
+  padding: 15px 0 0 10px;
+  font-family: 'Nobile', sans-serif;
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+
+.create input {
+  background: none;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #DDDDDD;
+  color: white;
+  font-family: 'Raleway', 'arial';
+  font-weight: 100;
+  font-size: 17px;
+  width: 245px;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(255, 123, 0, 1);
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid rgba(255, 123, 0, 1);
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 123, 0, 1);
+  border: 1px solid rgba(255, 123, 0, 1);    
+}
+
+.create input[type=submit] {
+   width: 210px; 
+     
+}
+
+::placeholder {
+    color: #616161 !important;
+}
+
+a {
+  text-decoration: none;
+  color: antiquewhite;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 992px) {
+  body {
+    background-size: auto;
+  }
+}
+@media only screen and (max-width : 600px) {
+    body {
+    background-size: auto;
+  }
+}
