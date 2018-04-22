@@ -31,9 +31,8 @@
 	</div>
 	<div class="col s8">
 		<h3 class="center">Welcome, John Smith!</h3>
-    <!--logout button; will style later-->
-    <form action="include/logout.inc.php" method="POST">
-      <button type="submit" name="submit">Log Out</button>
+    <form class="center" action="include/logout.inc.php" method="POST">
+      <button class="btn waves-effect waves-light" type="submit" name="submit">Log Out</button>
     </form>
 	</div>
    </div>
