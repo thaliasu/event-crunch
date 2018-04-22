@@ -23,14 +23,14 @@
 
 	<br><br>
    <div class="container row">
-	<div class="col s4 center">
+	<div class="col s5 center">
 		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50%" height="50%">
 	</div>
-	<div class="col s8">
-		<h3 class="center">Welcome, John Smith!</h3>
-    <form class="center" action="include/logout.inc.php" method="POST">
+	<div class="col s7">
+		<h2 id = "profile_welcome">Welcome, John Smith!</h2>
+    <!--form class="center" action="include/logout.inc.php" method="POST">
       <button class="btn waves-effect waves-light" type="submit" name="submit">Log Out</button>
-    </form>
+    </form-->
 	</div>
    </div>
 	<br><br>

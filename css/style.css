@@ -301,6 +301,12 @@ footer.page-footer {
 #hamburger {
   color: white;
 }
+
+/*CSS for profile page*/
+#profile_welcome {
+  padding: 0px;
+}
+
 <<<<<<< HEAD
 =======
 
