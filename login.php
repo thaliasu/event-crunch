@@ -23,7 +23,7 @@
     <div id="container">
 
       <div id="form_box">
-        <form action="log_in.inc.php" method="POST">
+        <form action="include/log_in.inc.php" method="POST">
           <p id="form_heading">Login</p>
           <input type="name" name="uid" placeholder="Username"><br />
           <input type="password" name="pwd" placeholder="Password"><br />

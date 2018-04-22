@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
   <html>
     <head>
@@ -24,7 +28,7 @@
       		font-family: 'Nobile', sans-serif
       		font-size: 70px;
       	}
-      	
+
         @media only screen and (max-width : 992px) {
         .parallax-container .section {
             position: absolute;
@@ -34,7 +38,7 @@
             top: 10%;
             }
         }
-          
+
         @media only screen and (max-width : 600px) {
             #index-banner .section {
                 top: 0;
@@ -42,47 +46,18 @@
         }
 
 
-      </style> 
+      </style>
     </head>
 
 <body>
+  <!-- nav bar -->
+  <?php include_once 'include/nav.inc.php'; ?>
 
-        <!-- Nav Bar -->
-
-    <nav class="z-depth-0">         
-    <div class="nav-wrapper">
-      <a id="logo-container" href="home.html" class="brand-logo">EventCrunch</a>    
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>  
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    </nav>
-
-    
-    
-
-    
-    
-    
-    
-    
 		<!-- About Us Section -->
-		
-	    
 
 	   <!--<div class="container row">
 	   	<h5>About Us</h5>
 	   </div>-->
-
-	    
 
 
 		 <div class="parallax-container">

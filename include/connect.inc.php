@@ -1,4 +1,6 @@
 <?php
+  session_start();  //idk if this is necessary on this page or not
+
   //connects to Event Crunch's database
   $username = "th402780";
   $password = "midKnight6^";

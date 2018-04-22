@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
   <html>
     <head>
@@ -47,7 +51,7 @@
             top: 10%;
             }
         }
-          
+
         @media only screen and (max-width : 600px) {
             #index-banner .section {
                 top: 0;
@@ -58,27 +62,8 @@
     </head>
 
 <body>
-
-        <!-- Nav Bar -->
-    
-   <nav class="z-depth-0">         
-    <div class="nav-wrapper">
-      <a id="logo-container" href="home.html" class="brand-logo">EventCrunch</a>    
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-	<li><a href="profile.html"><img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50" height="50"></a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-	<li><a href="profile.html"><img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50" height="50"></a></li>
-      </ul>
-    </div>
-    </nav>
+  <!-- nav bar -->
+  <?php include_once 'include/nav.inc.php'; ?>
 
 
 <div class="parallax-container">

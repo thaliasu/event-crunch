@@ -30,7 +30,7 @@
     <div id="container">
 
       <div id="form_box2">
-        <form class="create" action="new_account.inc.php" method="POST">
+        <form class="create" action="include/new_account.inc.php" method="POST">
           <p id="form_heading2">Create Account</p>
           <div id = "empty_error"></div>
           <input type="name" name = "fname" id = "fname" placeholder="First Name">

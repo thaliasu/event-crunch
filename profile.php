@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
   <html>
     <head>
@@ -10,41 +14,27 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <style>
-		
-		
-		
+
+
+
       </style>
     </head>
 
 <body>
+  <!-- nav bar -->
+  <?php include_once 'include/nav.inc.php'; ?>
 
-        <!-- Nav Bar -->
-    
-   <nav class="z-depth-0">         
-    <div class="nav-wrapper">
-      <a id="logo-container" href="home.html" class="brand-logo">EventCrunch</a>    
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li> 		
-        <li><a href="profile.html"><img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50" height="50"></a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="profile.html"><img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50" height="50"></a></li>
-      </ul>
-    </div>
-    </nav>
 	<br><br>
    <div class="container row">
 	<div class="col s4 center">
-		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="100" height="100">
+		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="200" height="200">
 	</div>
 	<div class="col s8">
 		<h3 class="center">Welcome, John Smith!</h3>
+    <!--logout button; will style later-->
+    <form action="include/logout.inc.php" method="POST">
+      <button type="submit" name="submit">Log Out</button>
+    </form>
 	</div>
    </div>
 	<br><br>
