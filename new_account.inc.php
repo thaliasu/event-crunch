@@ -1,10 +1,8 @@
 <?php
+  session_start();
+
   //insert data into table when user creates new account
   include_once 'connect.inc.php';
-  if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
-  }
-    echo "Connected successfully";
 
     //PHP can only reference names and not IDs
     //Check if submit button has been clicked

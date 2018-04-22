@@ -47,7 +47,7 @@
           <div id = "email_error"></div><br />
           <input type="submit" name = "submit" id = "submit" value="Submit"><br />
           <p class="message" id="font_21">Already have an account?
-              <a href="login.html" id="font_20">Sign In</a></p><br /><br />
+              <a href="login.php" id="font_20">Sign In</a></p><br /><br />
         </form>
         </div>
     </div>

@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +23,11 @@
     <div id="container">
 
       <div id="form_box">
-        <form>
+        <form action="log_in.inc.php" method="POST">
           <p id="form_heading">Login</p>
-          <input type="name" placeholder="Username"><br />
-          <input type="password" placeholder="Password"><br />
-          <input type="submit" value="Login"><br />
+          <input type="name" name="uid" placeholder="Username"><br />
+          <input type="password" name="pwd" placeholder="Password"><br />
+          <input type="submit" name="submit" value="Login"><br />
           <p class="message" id="font_21">Not registered?
               <a href="create.php"id="font_20">Create an account!</a></p><br /><br />
         </form>
