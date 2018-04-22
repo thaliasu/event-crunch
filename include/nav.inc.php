@@ -12,8 +12,9 @@
         <?php
           if(isset($_SESSION['logged_in'])) {
             echo '<li><a href="profile.php">Profile</a></li>';
+            echo '<li><a href="include/logout.inc.php">Logout</a></li>';
           } else {
-            echo '<li><a href="login.php">Profile</a></li>';
+            echo '<li><a href="login.php">Login</a></li>';
           }
         ?>
       </ul>
@@ -24,9 +25,12 @@
         <?php
           if(isset($_SESSION['logged_in'])) {
             echo '<li><a href="profile.php">Profile</a></li>';
+            echo '<li><a href="include/logout.inc.php">Logout</a></li>';
           } else {
-            echo '<li><a href="login.php">Profile</a></li>';
+            echo '<li><a href="login.php">Login</a></li>';
           }
+
+
         ?>
       </ul>
     </div>
