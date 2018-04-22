@@ -8,6 +8,7 @@ $(document).ready(function() {
   $('.parallax').parallax();
 
   $("#get-event").click(function(e){
+    $("#output").html("");
     e.preventDefault();
     $(".progress").css("display", "block");
     //prevent empty fields
@@ -20,15 +21,17 @@ $(document).ready(function() {
       var artistField = $("#artist-search").val();
       //Location Field
       var locationField = $("#location").val();
+      var capitalLocationField = locationField.substr(0,1).toUpperCase()+locationField.substr(1);
+
       $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"/events?app_id="+bandKey, function(response){
         console.log(response);
 
         //only return shows where venue is = to the city they inputed
-        var FilteredData = response.filter(function(elem){return (elem.venue.city == locationField) });
+        var FilteredData = response.filter(function(elem){return (elem.venue.city == capitalLocationField) });
 
 
           if(FilteredData.length == 1){
-            $('<h1>'+response[0].lineup[0]+'</h1>').appendTo('#output');
+            $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
                 var newDiv = $('<div></div>').attr('id', 'newRow');
                 newDiv.attr("class", "row");
                 newDiv.appendTo('#output');
@@ -85,53 +88,61 @@ $(document).ready(function() {
                               //Maps Logic
                               initMap(lat,lon,current);
 
-                            /*
-                            $(".artist-header").html(FilteredData[i].lineup);
-                          $(".date").html(FilteredData[i].datetime);
-                          $(".venue").html(FilteredData[i].venue.name);
-                          $(".status").html(FilteredData[i].offers[0].status);
-                          $(".tickets").html("<a href='"+FilteredData[i].offers[0].url+"' target='_blank'>Tickets</a>");
-
-
-                            */
+                            
                       }
                       else if (FilteredData.length > 1) {
-                          $('<h1>'+FilteredData[0].lineup+'</h1>').appendTo(newCol);
+                          console.log(FilteredData);
+                          $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
                           $.each(FilteredData, function(i, evt){
-                            //$(".info-container").html("<h1 class='artist-header'>"+evt.lineup+"</h1><div class='event-info'><p class='date'>"+evt.datetime+"</p><p class='venue'>"+evt.venue.name+"</p></div>");
-
-                            //Break this up so that it creates a new div for each item in
-                            //the object
-
-
                             //append a new row to body
                             var newDiv = $('<div></div>').attr('id', 'newRow' + i);
                             newDiv.attr("class", "row");
-              newDiv.appendTo('#output');
-                              //in this row have two cols
+                            newDiv.appendTo('#output');
 
-                //BAND COl
-                              var newCol = $('<div></div>').attr('id', 'newCol' + i);
-                              newCol.attr("class", "col s6");
-                newCol.appendTo(newDiv);
+                            //Artist Col
+                            var newCol = $('<div></div>').attr('id', 'newCol' + i);
+                            newCol.attr("class", "col s6");
+                            newCol.appendTo(newDiv);
 
+
+
+                //Artist
+                $('<span>Artist: </span><span id="artist'+ i + '"></span><br><br>').appendTo(newCol);
+                $("#artist"+i).html(FilteredData[i].lineup[0]);
 
                 //Date
-                $('<span>Date: </span><p id="date'+ i + '"></p>').appendTo(newCol);
+                $('<span>Date: </span><span id="date'+ i + '"></span><br><br>').appendTo(newCol);
                 $("#date"+i).html(FilteredData[i].datetime);
 
                 //Venue
-                $('<span>Venue: </span><p id="venue'+ i + '"></p>').appendTo(newCol);
+                $('<span>Venue: </span><span id="venue'+ i + '"></span><br><br>').appendTo(newCol);
                 $("#venue"+i).html(FilteredData[i].venue.name);
 
                 //Status
-                $('<span>Status: </span><p id="status'+ i + '"></p>').appendTo(newCol);
-                $("#status"+i).html(FilteredData[i].offers[0].status);
+                $('<span>Status: </span><span id="status'+ i + '"></span><br><br>').appendTo(newCol);
+                //var status = FilteredData[i].offers[0].status;
+                var status = FilteredData[i].offers[0] && FilteredData[i].offers[0].status;
+               
+                if(typeof status !== "undefined"){
+                
+                  $("#status"+i).html(FilteredData[i].offers[0].status);
+                } else {
+                  $("#status"+i).html('Not Available');
+               }
+
+
+
 
                 //Tickets
-                $('<span>Tickets: </span><p id="tickets'+ i + '"></p>').appendTo(newCol);
-                $("#tickets"+i).html("<a href='"+FilteredData[i].offers[0].url+"' target='_blank'>Tickets</a>");
+                $('<span id="tickets'+ i + '"></span><br><br>').appendTo(newCol);
 
+                 var ticketstatus = FilteredData[i].offers[0] && FilteredData[i].offers[0].url;
+                 if(typeof ticketstatus !== "undefined"){
+                $("#tickets"+i).html("<a class='ticketlink' href='"+FilteredData[i].offers[0].url+"' target='_blank'>Tickets</a>");
+              }
+
+              //Add Event
+              $('<button type="button" id="add-event' + i + '" class="waves-effect waves-light btn-large">Add Event</button>').appendTo(newCol);
 
                 //MAP COL
                 var newMapCol = $('<div></div>').attr('id', 'newMap' + i);
