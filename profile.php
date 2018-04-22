@@ -27,7 +27,7 @@
 		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50%" height="50%">
 	</div>
 	<div class="col s7">
-		<h2 id = "profile_welcome">Welcome, John Smith!</h2>
+		<h2 id = "profile_welcome">Welcome, <?php echo $_SESSION['first'] . ' ' . $_SESSION['last'] . '!'?></h2>
     <!--form class="center" action="include/logout.inc.php" method="POST">
       <button class="btn waves-effect waves-light" type="submit" name="submit">Log Out</button>
     </form-->
@@ -40,15 +40,15 @@
 				<section><h4>Profile Info</h4>
 				<br>
 				<h5>First Name</h5>
-				<input value="John" id="first_name" type="text" class="validate">
+				<input value="<?php echo $_SESSION['first']?>" id="first_name" type="text" class="validate">
 				<h5>Last Name</h5>
-				<input value="Smith" id="last_name" type="text" class="validate">
+				<input value="<?php echo $_SESSION['last']?>" id="last_name" type="text" class="validate">
 				<h5>Username</h5>
-				<input value="jsmith21" id="username" type="text" class="validate">
+				<input value="<?php echo $_SESSION['user']?>" id="username" type="text" class="validate">
 				<h5>Password</h5>
-				<input value="******" id="password" type="text" class="validate">
+				<input value="<?php echo $_SESSION['pass']?>" id="password" type="text" class="validate">
 				<h5>Email</h5>
-				<input value="jsmith@placeholder.com" id="email" type="text" class="validate">
+				<input value="<?php echo $_SESSION['email']?>" id="email" type="text" class="validate">
 				<a class="waves-effect waves-light btn">save profile changes</a>
 				</section>
 			</div>

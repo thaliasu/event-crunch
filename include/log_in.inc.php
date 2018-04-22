@@ -37,6 +37,7 @@
             $_SESSION['first'] = $row['firstName'];
             $_SESSION['last'] = $row['lastName'];
             $_SESSION['user'] = $row['username'];
+            $_SESSION['pass'] = $pass;
             $_SESSION['email'] = $row['email'];
             //redirect to profile
             header("Location: ../profile.php");
