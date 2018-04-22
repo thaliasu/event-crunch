@@ -27,37 +27,52 @@
   <?php include_once 'include/nav.inc.php'; ?>
 
 	<br><br>
-   <div class="container row">
-	<div class="col s12 m5 l5 center">
-		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50%" height="50%">
-	</div>
-	<div class="col s12 m7 l7">
-		<h2 id = "profile_welcome">Welcome, <?php echo $_SESSION['first'] . ' ' . $_SESSION['last'] . '!'?></h2>
-    <!--form class="center" action="include/logout.inc.php" method="POST">
-      <button class="btn waves-effect waves-light" type="submit" name="submit">Log Out</button>
-    </form-->
-	</div>
+  <div class="container row">
+  	<div class="col s12 m5 l5 center">
+  		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50%" height="50%">
+  	</div>
+  	<div class="col s12 m7 l7 center">
+  		<h2 id = "profile_welcome">Welcome, <?php echo $_SESSION['first'] . ' ' . $_SESSION['last'] . '!'?></h2>
+      <!--form class="center" action="include/logout.inc.php" method="POST">
+        <button class="btn waves-effect waves-light" type="submit" name="submit">Log Out</button>
+      </form-->
+  	</div>
    </div>
 	<br><br>
     <div class="container row">
     	<div class="row">
-    		<div id="profile-info" class="col s12 m12 l5">
-				<section><h4>Profile Info</h4>
-				<br>
-				<h5>First Name</h5>
-				<input value="<?php echo $_SESSION['first']?>" id="first_name" type="text" class="validate">
-				<h5>Last Name</h5>
-				<input value="<?php echo $_SESSION['last']?>" id="last_name" type="text" class="validate">
-				<h5>Username</h5>
-				<input value="<?php echo $_SESSION['user']?>" id="username" type="text" class="validate">
-				<h5>Password</h5>
-				<input value="<?php echo $_SESSION['pass']?>" id="password" type="text" class="validate">
-				<h5>Email</h5>
-				<input value="<?php echo $_SESSION['email']?>" id="email" type="text" class="validate">
-				<a class="waves-effect waves-light btn">save profile changes</a>
-				</section>
-			</div>
-    		<div class="col s12 m12 l7">
+    		<div id="profile-info" class="col s12">
+  				<section><h4 class="center-align">Profile Info</h4>
+    				<br>
+              <div class="input-field col s12 l6">
+        				<h5>First Name</h5>
+        				<input value="<?php echo $_SESSION['first']?>" id="first_name" type="text" class="validate">
+              </div>
+              <div class="input-field col s12 l6">
+                <h5>Last Name</h5>
+        				<input value="<?php echo $_SESSION['last']?>" id="last_name" type="text" class="validate">
+              </div>
+              <div class="input-field col s12 l6">
+        				<h5>Username</h5>
+        				<input value="<?php echo $_SESSION['user']?>" id="username" type="text" class="validate">
+              </div>
+              <div class="input-field col s12 l6">
+        				<h5>Password</h5>
+        				<input value="<?php echo $_SESSION['pass']?>" id="password" type="text" class="validate">
+              </div>
+              <div class="input-field col s12">
+        				<h5>Email</h5>
+        				<input value="<?php echo $_SESSION['email']?>" id="email" type="text" class="validate">
+              </div>
+              <div class="input-field col s12 center">
+        				<a class="waves-effect waves-light btn">save profile changes</a>
+              </div>
+  				</section>
+			   </div>
+       </div>
+       <br>
+
+    		<!--div class="col s12 m12 l7">
     			<section><h4>Events</h4>
     			<br>
 				<div class="card">
@@ -78,10 +93,84 @@
 						<p class="grey-text text-darken-4">Event starts: 8:00 pm</p>
 						<a href="#">Delete Event</a>
 					</div>
-				</div>
     			</section>
-
-    		</div>
+    		</div-->
+        <div class="row s12">
+        		<h4 class="center-align">Events</h4>
+        </div>
+      		<div class="row">
+        		<div class="col s12 m4 l4">
+        			<section>
+           			<br>
+        				<div class="card">
+        					<div class="card-image waves-effect waves-block waves-light">
+        						<img class="activator" src="images/audience.jpg" alt="event image">
+        					</div>
+        					<div class="card-content">
+        						<span class="card-title activator grey-text text-darken-4">Battle Of The Bands<i class="material-icons right">more_vert</i></span>
+        						<p class="grey-text text-darken-4">4/21/18</p>
+        						<a href="#">Delete Event</a>
+        					</div>
+        					<div class="card-reveal">
+        						<span class="card-title grey-text text-darken-4">Battle of the Bands<i class="material-icons right">close</i></span>
+        						<p class="grey-text text-darken-4">4/21/18</p>
+        						<p class="grey-text text-darken-4">The Hole In The Wall</p>
+        						<p class="grey-text text-darken-4">123 Apple St. Orlando, FL 32817</p>
+        						<p class="grey-text text-darken-4">Doors open: 7:00 pm</p>
+        						<p class="grey-text text-darken-4">Event starts: 8:00 pm</p>
+        						<a href="#">Delete Event</a>
+        					</div>
+        				</div>
+        			</section>
+        		</div>
+        		<div class="col s12 m4 l4">
+        			<section>
+          			<br>
+        				<div class="card">
+        					<div class="card-image waves-effect waves-block waves-light">
+        						<img class="activator" src="images/audience.jpg" alt="event image">
+        					</div>
+        					<div class="card-content">
+        						<span class="card-title activator grey-text text-darken-4">Battle Of The Bands<i class="material-icons right">more_vert</i></span>
+        						<p class="grey-text text-darken-4">4/21/18</p>
+        						<a href="#">Delete Event</a>
+        					</div>
+        					<div class="card-reveal">
+        						<span class="card-title grey-text text-darken-4">Battle of the Bands<i class="material-icons right">close</i></span>
+        						<p class="grey-text text-darken-4">4/21/18</p>
+        						<p class="grey-text text-darken-4">The Hole In The Wall</p>
+        						<p class="grey-text text-darken-4">123 Apple St. Orlando, FL 32817</p>
+        						<p class="grey-text text-darken-4">Doors open: 7:00 pm</p>
+        						<p class="grey-text text-darken-4">Event starts: 8:00 pm</p>
+        						<a href="#">Delete Event</a>
+        					</div>
+        				</div>
+         			</section>
+          	</div>
+            <div class="col s12 m4 l4">
+        			<section>
+          			<br>
+        				<div class="card">
+        					<div class="card-image waves-effect waves-block waves-light">
+        						<img class="activator" src="images/audience.jpg" alt="event image">
+        					</div>
+        					<div class="card-content">
+        						<span class="card-title activator grey-text text-darken-4">Battle Of The Bands<i class="material-icons right">more_vert</i></span>
+        						<p class="grey-text text-darken-4">4/21/18</p>
+        						<a href="#">Delete Event</a>
+        					</div>
+        					<div class="card-reveal">
+        						<span class="card-title grey-text text-darken-4">Battle of the Bands<i class="material-icons right">close</i></span>
+        						<p class="grey-text text-darken-4">4/21/18</p>
+        						<p class="grey-text text-darken-4">The Hole In The Wall</p>
+        						<p class="grey-text text-darken-4">123 Apple St. Orlando, FL 32817</p>
+        						<p class="grey-text text-darken-4">Doors open: 7:00 pm</p>
+        						<p class="grey-text text-darken-4">Event starts: 8:00 pm</p>
+        						<a href="#">Delete Event</a>
+        					</div>
+        				</div>
+         			</section>
+          	</div>
     	</div>
     </div>
     <br>
