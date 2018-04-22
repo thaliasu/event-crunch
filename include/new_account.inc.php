@@ -51,8 +51,7 @@
                 //Insert user into db
                 $sql = "INSERT INTO users(firstName, lastName, username, password, email) VALUES ('$first', '$last', '$user', '$hashedPwd', '$email')";
                 mysqli_query($conn, $sql);
-                header("Location: ../create.php?signup=success");
-                //header("Refresh: 5; url:login.html");
+                header("Location: ../login.php");
                 exit();
               }
             }
