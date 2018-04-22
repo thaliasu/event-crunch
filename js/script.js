@@ -65,12 +65,12 @@ $(document).ready(function() {
 
                 //Add event button under 2 cols
                 $('<button type="button" id="add-event" class="waves-effect waves-light btn-large">Add Event</button>').appendTo(newCol);
-                
+
 
 
                 // var newButton = $('<div></div>').attr('id', 'newButton');
                 //   newButton.attr("class", "waves-effect waves-light btn-large");
-                  
+
                   // newButton.appendTo(newCol);  //not sure if appending to the right thing
                   //add click event later that triggers checking for session & displays success/fail message for adding event
 
@@ -88,7 +88,7 @@ $(document).ready(function() {
                               //Maps Logic
                               initMap(lat,lon,current);
 
-                            
+
                       }
                       else if (FilteredData.length > 1) {
                           console.log(FilteredData);
@@ -122,9 +122,9 @@ $(document).ready(function() {
                 $('<span>Status: </span><span id="status'+ i + '"></span><br><br>').appendTo(newCol);
                 //var status = FilteredData[i].offers[0].status;
                 var status = FilteredData[i].offers[0] && FilteredData[i].offers[0].status;
-               
+
                 if(typeof status !== "undefined"){
-                
+
                   $("#status"+i).html(FilteredData[i].offers[0].status);
                 } else {
                   $("#status"+i).html('Not Available');
