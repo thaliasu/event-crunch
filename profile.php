@@ -1,5 +1,10 @@
 <?php
   session_start();
+  //if session has expired, redirect to login page
+  if(!isset($_SESSION['logged_in'])) {
+    header("Location: login.php");
+    exit();
+  }
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +28,10 @@
 
 	<br><br>
    <div class="container row">
-	<div class="col s5 center">
+	<div class="col s12 m5 l5 center">
 		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50%" height="50%">
 	</div>
-	<div class="col s7">
+	<div class="col s12 m7 l7">
 		<h2 id = "profile_welcome">Welcome, <?php echo $_SESSION['first'] . ' ' . $_SESSION['last'] . '!'?></h2>
     <!--form class="center" action="include/logout.inc.php" method="POST">
       <button class="btn waves-effect waves-light" type="submit" name="submit">Log Out</button>
@@ -36,7 +41,7 @@
 	<br><br>
     <div class="container row">
     	<div class="row">
-    		<div id="profile-info" class="col s5">
+    		<div id="profile-info" class="col s12 m12 l5">
 				<section><h4>Profile Info</h4>
 				<br>
 				<h5>First Name</h5>
@@ -52,7 +57,7 @@
 				<a class="waves-effect waves-light btn">save profile changes</a>
 				</section>
 			</div>
-    		<div class="col s7">
+    		<div class="col s12 m12 l7">
     			<section><h4>Events</h4>
     			<br>
 				<div class="card">
