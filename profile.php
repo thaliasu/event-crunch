@@ -1,5 +1,8 @@
 <?php
   session_start();
+  if(!isset($_SESSION['logged_in'])) { 
+  	header('Location: /login.php');
+}	
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +24,8 @@
     </head>
 
 <body>
+
+	
   <!-- nav bar -->
   <?php include_once 'include/nav.inc.php'; ?>
 
@@ -30,18 +35,15 @@
 		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="200" height="200">
 	</div>
 	<div class="col s8">
-		<h3 class="center">Welcome, John Smith!</h3>
-    <!--logout button; will style later-->
-    <form action="include/logout.inc.php" method="POST">
-      <button type="submit" name="submit">Log Out</button>
-    </form>
+		<h3 class="center">Welcome, <?php echo $_SESSION['first'] . ' ' . $_SESSION['last'] . '!';?></h3>
 	</div>
    </div>
 	<br><br>
     <div class="container row">
     	<div class="row">
-    		<div id="profile-info" class="col s5">
-				<section><h4>Profile Info</h4>
+    		<div class="col s3"></div>
+    		<div id="profile-info" class="col s6">
+				<section><h4 class="center-align">Profile Info</h4>
 				<br>
 				<h5>First Name</h5>
 				<input value="John" id="first_name" type="text" class="validate">
@@ -56,8 +58,14 @@
 				<a class="waves-effect waves-light btn">save profile changes</a>
 				</section>
 			</div>
-    		<div class="col s7">
-    			<section><h4>Events</h4>
+			<div class="col s3"></div>
+		</div>
+		<div class="row">
+		<h4 class="center-align">Events</h4>
+		</div>
+		<div class="row">
+    		<div class="col s4">
+    			<section>
     			<br>
 				<div class="card">
 					<div class="card-image waves-effect waves-block waves-light">
@@ -79,8 +87,56 @@
 					</div>
 				</div>
     			</section>
-
     		</div>
+    		<div class="col s4">
+    			<section>
+    			<br>
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="images/audience.jpg" alt="event image">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">Battle Of The Bands<i class="material-icons right">more_vert</i></span>
+						<p class="grey-text text-darken-4">4/21/18</p>
+						<a href="#">Delete Event</a>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Battle of the Bands<i class="material-icons right">close</i></span>
+						<p class="grey-text text-darken-4">4/21/18</p>
+						<p class="grey-text text-darken-4">The Hole In The Wall</p>
+						<p class="grey-text text-darken-4">123 Apple St. Orlando, FL 32817</p>
+						<p class="grey-text text-darken-4">Doors open: 7:00 pm</p>
+						<p class="grey-text text-darken-4">Event starts: 8:00 pm</p>
+						<a href="#">Delete Event</a>
+					</div>
+				</div>
+    			</section>
+    		</div>
+    		<div class="col s4">
+    			<section>
+    			<br>
+				<div class="card">
+					<div class="card-image waves-effect waves-block waves-light">
+						<img class="activator" src="images/audience.jpg" alt="event image">
+					</div>
+					<div class="card-content">
+						<span class="card-title activator grey-text text-darken-4">Battle Of The Bands<i class="material-icons right">more_vert</i></span>
+						<p class="grey-text text-darken-4">4/21/18</p>
+						<a href="#">Delete Event</a>
+					</div>
+					<div class="card-reveal">
+						<span class="card-title grey-text text-darken-4">Battle of the Bands<i class="material-icons right">close</i></span>
+						<p class="grey-text text-darken-4">4/21/18</p>
+						<p class="grey-text text-darken-4">The Hole In The Wall</p>
+						<p class="grey-text text-darken-4">123 Apple St. Orlando, FL 32817</p>
+						<p class="grey-text text-darken-4">Doors open: 7:00 pm</p>
+						<p class="grey-text text-darken-4">Event starts: 8:00 pm</p>
+						<a href="#">Delete Event</a>
+					</div>
+				</div>
+    			</section>
+    		</div>
+    	</div>
     	</div>
     </div>
     <br>
@@ -98,7 +154,7 @@
 	          </div>
     </footer>
 
-
+     
 
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

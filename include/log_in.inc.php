@@ -39,7 +39,7 @@
             $_SESSION['user'] = $row['username'];
             $_SESSION['email'] = $row['email'];
             //redirect to profile
-            header("Location: ../profile.html");
+            header("Location: ../profile.php");
             exit();
           }
         }

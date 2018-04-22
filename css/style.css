@@ -25,6 +25,10 @@ p {
   height: 300px;
 }
 
+.ticketlink {
+  color: white;
+}
+
 
 nav {
     color: #fff;
@@ -49,6 +53,8 @@ h4 {
    font-style: normal;
    font-weight: 300;    
 }
+
+
 
 
 
@@ -295,3 +301,5 @@ footer.page-footer {
 #hamburger {
   color: white;
 }
+
+
