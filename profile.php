@@ -14,9 +14,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <style>
-
-
-
       </style>
     </head>
 
@@ -27,7 +24,7 @@
 	<br><br>
    <div class="container row">
 	<div class="col s4 center">
-		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="200" height="200">
+		<img class="circle z-depth-2" src="images/profile.jpg" alt="profile" width="50%" height="50%">
 	</div>
 	<div class="col s8">
 		<h3 class="center">Welcome, John Smith!</h3>
@@ -99,9 +96,9 @@
 
 
 
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-      <script src="js/script.js"></script>
-    </body>
-  </html>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
