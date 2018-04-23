@@ -19,18 +19,18 @@
       //error handlers
       //check for empty fields
       if(empty($first) || empty($last) || empty($user) || empty($pass) || empty($email)) {
-        header("Location: ../profile.php?signup=empty");
+        header("Location: ../profile.php?update=empty");
         exit();
       }else {
           //check if input is valid; code may not be neccessary once I figure submit event out
-          if(!preg_match("/^[a-zA-Z]{1,20}$/", $first) || !preg_match("/^[a-zA-Z]{1,20}$/", $last) || !preg_match("/^\S{4,20}$/", $user)
+          if(!preg_match("/^([a-zA-Z]'* ?){1,20}$/", $first) || !preg_match("/^([a-zA-Z]'* ?){1,20}$/", $last) || !preg_match("/^\S{4,20}$/", $user)
             || !preg_match("/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d])([^\s]){8,16}$/", $pass)) {
-            header("Location: ../profile.php?signup=invalid");
+            header("Location: ../profile.php?update=invalid");
             exit();
           } else {
             //filter_var checks for a specific string
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-              header("Location: ../profile.php?signup=emailinvalid");
+              header("Location: ../profile.php?update=emailinvalid");
               exit();
             } else {
               //check if username is taken
@@ -39,26 +39,30 @@
               $resultCheck = mysqli_num_rows($result);
 
               if( (!$currentUser) && $resultCheck > 0) {
-                header("Location: ../profile.php?signup=usertaken");
+                header("Location: ../profile.php?update=usertaken");
                 exit();
               } else {
                 //Hashing the password
                 $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
-                header("Location: ../profile.php?signup=update");
+
                 //Update user in db
                 $sql = "UPDATE users
-                  SET firstName = $first, lastName = $last, username = $user, password = $hashedPwd, email = $email
+                  SET firstName = '$first', lastName = '$last', username = '$user', password = '$hashedPwd', email = '$email'
                   WHERE id = $id";
-                mysqli_query($conn, $sql);
+                if(mysqli_query($conn, $sql)) {
+                  //overwrite session variables
+                  $_SESSION['first'] = $first;
+                  $_SESSION['last'] = $last;
+                  $_SESSION['user'] = $user;
+                  $_SESSION['pass'] = $pass;
+                  $_SESSION['email'] = $email;
 
-                //overwrite session variables
-                /*$_SESSION['first'] = $row['firstName'];
-                $_SESSION['last'] = $row['lastName'];
-                $_SESSION['user'] = $row['username'];
-                $_SESSION['pass'] = $pass;
-                $_SESSION['email'] = $row['email'];
-                header("Location: ../profile.php");
-                exit();*/
+                  header("Location: ../profile.php?update=success");
+                  exit();
+                } else {
+                  header("Location: ../profile.php?update=failure");
+                  exit();
+                }
               }
             }
           }

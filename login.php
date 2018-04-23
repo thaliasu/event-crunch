@@ -25,8 +25,8 @@
       <div id="form_box">
         <form action="include/log_in.inc.php" method="POST">
           <p id="form_heading">Login</p>
-          <input type="name" name="uid" placeholder="Username"><br />
-          <input type="password" name="pwd" placeholder="Password"><br />
+          <input type="name" name="uid" placeholder="Username" maxlength="20"><br />
+          <input type="password" name="pwd" placeholder="Password" maxlength="20"><br />
           <input type="submit" name="submit" value="Login"><br />
           <p class="message" id="font_21">Not registered?
               <a href="create.php"id="font_20">Create an account!</a></p><br /><br />

@@ -33,17 +33,17 @@
         <form class="create" action="include/new_account.inc.php" method="POST">
           <p id="form_heading2">Create Account</p>
           <div id = "empty_error"></div>
-          <input type="name" name = "fname" id = "fname" placeholder="First Name">
+          <input type="name" name = "fname" id = "fname" placeholder="First Name" maxlength="20">
           <div id = "fname_error"></div><br />
-          <input type="name" name = "lname" id = "lname" placeholder="Last Name">
+          <input type="name" name = "lname" id = "lname" placeholder="Last Name" maxlength="20">
           <div id = "lname_error"></div><br />
 
 
-          <input type="name" name = "uid" id = "uid" placeholder="Username">
+          <input type="name" name = "uid" id = "uid" placeholder="Username" maxlength="20">
           <div id = "uid_error"></div><br />
-          <input type="password" name = "pwd" id = "pwd" placeholder="Password">
+          <input type="password" name = "pwd" id = "pwd" placeholder="Password" maxlength="20">
           <div id = "pwd_error"></div><br />
-          <input type="name" name = "email" id = "email" placeholder="Email">
+          <input type="name" name = "email" id = "email" placeholder="Email" maxlength="30">
           <div id = "email_error"></div><br />
           <input type="submit" name = "submit" id = "submit" value="Submit"><br />
           <p class="message" id="font_21">Already have an account?

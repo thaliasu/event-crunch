@@ -1,7 +1,7 @@
 //RegEx
 var uidCheck = new RegExp(/^\S{4,20}$/);
 var passCheck = new RegExp(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d])([^\s]){8,16}$/);
-var nameCheck = new RegExp(/^[a-zA-Z]{1,20}$/);
+var nameCheck = new RegExp(/^([a-zA-Z]'* ?){1,20}$/);
 var emailCheck = new RegExp(/^((?=.*\w@)(?=.*[a-zA-Z])(?=.*\.[a-zA-Z])){5,30}/);
 
 $(function() {

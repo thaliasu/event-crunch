@@ -27,7 +27,7 @@
         exit();
       }else {
           //check if input is valid; code may not be neccessary once I figure submit event out
-          if(!preg_match("/^[a-zA-Z]{1,20}$/", $first) || !preg_match("/^[a-zA-Z]{1,20}$/", $last) || !preg_match("/^\S{4,20}$/", $user)
+          if(!preg_match("/^([a-zA-Z]'* ?){1,20}$/", $first) || !preg_match("/^([a-zA-Z]'* ?){1,20}$/", $last) || !preg_match("/^\S{4,20}$/", $user)
             || !preg_match("/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d])([^\s]){8,16}$/", $pass)) {
             header("Location: ../create.php?signup=invalid");
             exit();
