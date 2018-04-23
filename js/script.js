@@ -49,7 +49,23 @@ $(document).ready(function() {
 
                 //Date
                 $('<span>Date: </span><span id="date"></span><br><br>').appendTo(newCol);
-                $("#date").html(FilteredData[0].datetime);
+                var eventDate = FilteredData[0].datetime;
+
+                date = new Date(eventDate);
+                year = date.getFullYear();
+                month = date.getMonth()+1;
+                dt = date.getDate();
+
+                if (dt < 10) {
+                  dt = '0' + dt;
+                }
+                if (month < 10) {
+                  month = '0' + month;
+                }
+
+                var finalDate = (year+'-' + month + '-'+dt);
+
+                $("#date").html(finalDate);
 
                 //Venue
                 $('<span>Venue: </span><span id="venue"></span><br><br>').appendTo(newCol);
@@ -112,7 +128,24 @@ $(document).ready(function() {
 
                 //Date
                 $('<span>Date: </span><span id="date'+ i + '"></span><br><br>').appendTo(newCol);
-                $("#date"+i).html(FilteredData[i].datetime);
+                
+                var eventDate = FilteredData[i].datetime;
+
+                date = new Date(eventDate);
+                year = date.getFullYear();
+                month = date.getMonth()+1;
+                dt = date.getDate();
+
+                if (dt < 10) {
+                  dt = '0' + dt;
+                }
+                if (month < 10) {
+                  month = '0' + month;
+                }
+
+                var finalDate = (year+'-' + month + '-'+dt);
+
+                $("#date"+i).html(finalDate);
 
                 //Venue
                 $('<span>Venue: </span><span id="venue'+ i + '"></span><br><br>').appendTo(newCol);
