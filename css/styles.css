@@ -1,12 +1,12 @@
 body {
-  background: url(images/img11.jpg) no-repeat center center fixed; 
+  background: url(images/img11.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-color: #131313 !important;
-  
-    
+
+
 }
 
 
@@ -48,7 +48,7 @@ body {
   width: 300px;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 1);    
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1);
 }
 
 
@@ -63,15 +63,21 @@ body {
 #font_20 {
   font-size: 15px;
   color: #ff7b00;
-  font-family: 'Nobile', sans-serif;    
+  font-family: 'Nobile', sans-serif;
 }
 
-
+#fname_error, #lname_error, #empty_error, #uid_error, #pwd_error, #email_error {
+  font-family: 'Nobile', sans-serif;
+  width: 266px !important;
+  color: white;
+  margin: 0px 57px !important;
+  text-align: center;
+}
 
 #font_21 {
   font-size: 15px;
   color: white;
-  font-family: 'Nobile', sans-serif;    
+  font-family: 'Nobile', sans-serif;
 }
 
 
@@ -102,12 +108,12 @@ input:focus {
 input[type=submit]:hover {
   cursor: pointer;
   box-shadow: 0 0 10px rgba(255, 123, 0, 1);
-  border: 1px solid rgba(255, 123, 0, 1);    
+  border: 1px solid rgba(255, 123, 0, 1);
 }
 
 input[type=submit] {
-   width: 210px; 
-     
+   width: 210px;
+
 }
 
 ::placeholder {
@@ -134,7 +140,7 @@ a:hover {
   width: 380px;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 1);    
+  box-shadow: 0 0 10px rgba(255, 255, 255, 1);
 }
 
 
@@ -175,12 +181,12 @@ input:focus {
 input[type=submit]:hover {
   cursor: pointer;
   box-shadow: 0 0 10px rgba(255, 123, 0, 1);
-  border: 1px solid rgba(255, 123, 0, 1);    
+  border: 1px solid rgba(255, 123, 0, 1);
 }
 
 .create input[type=submit] {
-   width: 210px; 
-     
+   width: 210px;
+
 }
 
 ::placeholder {

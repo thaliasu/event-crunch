@@ -44,7 +44,7 @@ $(function() {
     } else {
       if(fname_error == false) {
         $('#fname_error').text('');  //clears out previous error messages
-        $('#fname_error').append('<p id = "error">Please enter a valid name.</p>');
+        $('#fname_error').append('<p id = "error_msg">Please enter a valid name.</p>');
         $('#fname_error').show();
         fname_error = true;
       }
@@ -57,7 +57,7 @@ $(function() {
     } else {
       if(lname_error == false) {
         $('#lname_error').text('');  //clears out previous error messages
-        $('#lname_error').append('<p id = "error">Please enter a valid name.</p>');
+        $('#lname_error').append('<p id = "error_msg">Please enter a valid name.</p>');
         $('#lname_error').show();
         lname_error = true;
       }
@@ -70,7 +70,7 @@ $(function() {
     } else {
       if(uid_error == false) {
         $('#uid_error').text('');  //clears out previous error messages
-        $('#uid_error').append('<p id = "error">Username must be 4-20 characters long.</p>');
+        $('#uid_error').append('<p id = "error_msg">Username must be 4-20 characters long.</p>');
         $('#uid_error').show();
         uid_error = true;
       }
@@ -83,7 +83,7 @@ $(function() {
     } else {
       if(pwd_error == false) {
         $('#pwd_error').text('');  //clears out previous error messages
-        $('#pwd_error').append('<p id = "error">Password must contain 1 uppercase and lowercase letter, 1 number, 1 alphanumeric number, and be 8-20 characters long.</p>');
+        $('#pwd_error').append('<p id = "error_msg">Password must contain 1 uppercase and lowercase letter, 1 number, 1 alphanumeric number, and be 8-20 characters long.</p>');
         $('#pwd_error').show();
         pwd_error = true;
       }
@@ -96,7 +96,7 @@ $(function() {
     } else {
       if(email_error == false) {
         $('#email_error').text('');  //clears out previous error messages
-        $('#email_error').append('<p id = "error">Please enter a valid email address.</p>');
+        $('#email_error').append('<p id = "error_msg">Please enter a valid email address.</p>');
         $('#email_error').show();
         email_error = true;
       }
