@@ -71,6 +71,14 @@ $(document).ready(function() {
 
                 $("#date").html(finalDate);
 
+                //Get thumb url but hide it(Q this will require fixing for more than one result due to it not being filtered)
+                //also first getJSON will finish before running this one
+                $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"?app_id="+bandKey, function(response){
+                $('<span id="url" class="hidethis"></span>').appendTo(newCol);
+                $("#url").html(response.thumb_url);
+                });
+
+
                 //Venue
                 $('<span>Venue: </span><span id="venue"></span><br><br>').appendTo(newCol);
                 $("#venue").html(FilteredData[0].venue.name);
@@ -84,7 +92,7 @@ $(document).ready(function() {
                 $("#tickets").html("<a class='ticketlink' href='"+FilteredData[0].offers[0].url+"' target='_blank'>Tickets</a>");
 
                 //Add event button under 2 cols
-                $('<button type="button" id="add-event" class="waves-effect waves-light btn-large">Add Event</button>').appendTo(newCol);
+                $('<button type="button" id="add-event" class="waves-effect waves-light btn-large addEbtn">Add Event</button>').appendTo(newCol);
 
                 //MAP COL
                 var newMapCol = $('<div></div>').attr('id', 'newMap');
@@ -170,7 +178,7 @@ $(document).ready(function() {
               } 
 
               //Add Event
-              $('<button type="button" id="add-event' + i + '" class="waves-effect waves-light btn-large">Add Event</button>').appendTo(newCol);
+              $('<button type="button" id="add-event' + i + '" class="waves-effect waves-light btn-large addEbtnM">Add Event</button>').appendTo(newCol);
 
                 //MAP COL
                 var newMapCol = $('<div></div>').attr('id', 'newMap' + i);
@@ -199,6 +207,63 @@ $(document).ready(function() {
       
       }
   });
+
+
+$(document).on("click", ".addEbtn", function(){
+  console.log($(this).attr("id"));
+   console.log("single");
+  //get values of the data
+  //get artist name
+  var artist = $("#artist").text();
+  console.log(artist);
+
+  var date = $("#date").text();
+  console.log(date);
+
+  var venue = $("#venue").text();
+  console.log(venue);
+
+  var url = $("#url").text();
+  console.log(url);
+
+  
+
+  //Ajax request to store this stuff in the database
+  $.ajax({
+  method: "POST",
+  url: "add-event.php",
+  data: { artist: artist, date: date, venue: venue, url: url }
+})
+  .done(function( response ) {
+    alert( "Info: " + response );
+  });
+
+
+
+
+
+  
+});
+
+
+$(document).on("click", ".addEbtnM", function(){
+  console.log($(this).attr("id"));
+  //get values of the data
+  console.log("multiple");
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+
 function initMap(latC,lonC,current) {
         var uluru = {lat: latC, lng: lonC};
         var map = new google.maps.Map(document.getElementById('map' + current), {
