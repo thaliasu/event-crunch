@@ -57,8 +57,10 @@
 
 
 <div id="output" class="container">
-  <div class="nodata"></div>
+  
 </div>
+
+<div id="nodata" class="center-align"></div>
 
 
 

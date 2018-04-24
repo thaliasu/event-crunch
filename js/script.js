@@ -2,19 +2,22 @@ var bandKey = '4f45c5ceb4c55ae3533d6bff4bdbfd0e';
 
 $(document).ready(function() {
   //initMap();
+  $('.parallax').parallax();
   $(".nodata").html("");
   $("#output").html("");
+
   $('.button-collapse').sideNav();
   $('.parallax').parallax();
 
-  $("#get-event").click(function(e){
+  $("#get-event").click(function(e){ //1 unadded
     $("#output").html("");
+    $("#nodata").html("");
     e.preventDefault();
     $(".progress").css("display", "block");
     //prevent empty fields
-     if($.trim($('#artist-search').val()) == ''){
+     if($.trim($('#artist-search').val()) == ''){ //2 unadded
         $(".error").css("display", "block").html("input cannot be left blank");
-     } else {
+     } else { //2 unadded
       $(".error").css("display", "none");
       $(".info-container").css("display", "block");
       //artist field
@@ -23,14 +26,15 @@ $(document).ready(function() {
       var locationField = $("#location").val();
       var capitalLocationField = locationField.substr(0,1).toUpperCase()+locationField.substr(1);
 
-      $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"/events?app_id="+bandKey, function(response){
+      $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"/events?app_id="+bandKey, function(response){ //3 unadded
         console.log(response);
 
         //only return shows where venue is = to the city they inputed
-        var FilteredData = response.filter(function(elem){return (elem.venue.city == capitalLocationField) });
+        var FilteredData = response.filter(function(elem){ //done
+          return (elem.venue.city == capitalLocationField) 
+        }); //done
 
-
-          if(FilteredData.length == 1){
+        if(FilteredData.length == 1){  //4 unadded
             $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
                 var newDiv = $('<div></div>').attr('id', 'newRow');
                 newDiv.attr("class", "row");
@@ -45,7 +49,7 @@ $(document).ready(function() {
                 //Artist Name
                 $('<span class="inlinethis">Artist: </span><span id="artist"></span><br><br>').appendTo(newCol);
                 $("#artist").html(FilteredData[0].lineup);
-                //data
+                
 
                 //Date
                 $('<span>Date: </span><span id="date"></span><br><br>').appendTo(newCol);
@@ -82,14 +86,6 @@ $(document).ready(function() {
                 //Add event button under 2 cols
                 $('<button type="button" id="add-event" class="waves-effect waves-light btn-large">Add Event</button>').appendTo(newCol);
 
-
-
-                // var newButton = $('<div></div>').attr('id', 'newButton');
-                //   newButton.attr("class", "waves-effect waves-light btn-large");
-
-                  // newButton.appendTo(newCol);  //not sure if appending to the right thing
-                  //add click event later that triggers checking for session & displays success/fail message for adding event
-
                 //MAP COL
                 var newMapCol = $('<div></div>').attr('id', 'newMap');
                               newMapCol.attr("class", "col s6");
@@ -105,11 +101,13 @@ $(document).ready(function() {
                               initMap(lat,lon,current);
 
 
-                      }
-                      else if (FilteredData.length > 1) {
-                          console.log(FilteredData);
+          } //end of if 
+
+          else if (FilteredData.length > 1) { 
+                    
+              console.log(FilteredData);
                           $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
-                          $.each(FilteredData, function(i, evt){
+                          $.each(FilteredData, function(i, evt){ 
                             //append a new row to body
                             var newDiv = $('<div></div>').attr('id', 'newRow' + i);
                             newDiv.attr("class", "row");
@@ -163,16 +161,13 @@ $(document).ready(function() {
                   $("#status"+i).html('Not Available');
                }
 
-
-
-
                 //Tickets
                 $('<span id="tickets'+ i + '"></span><br><br>').appendTo(newCol);
 
                  var ticketstatus = FilteredData[i].offers[0] && FilteredData[i].offers[0].url;
                  if(typeof ticketstatus !== "undefined"){
                 $("#tickets"+i).html("<a class='ticketlink' href='"+FilteredData[i].offers[0].url+"' target='_blank'>Tickets</a>");
-              }
+              } 
 
               //Add Event
               $('<button type="button" id="add-event' + i + '" class="waves-effect waves-light btn-large">Add Event</button>').appendTo(newCol);
@@ -191,43 +186,20 @@ $(document).ready(function() {
                               //Maps Logic
                               initMap(lat,lon,current);
 
-
-                            /*
-                            $(".artist-header").html(FilteredData[i].lineup);
-                          $(".date").html(FilteredData[i].datetime);
-                          $(".venue").html(FilteredData[i].venue.name);
-                          $(".status").html(FilteredData[i].offers[0].status);
-                          $(".tickets").html("<a href='"+FilteredData[i].offers[0].url+"' target='_blank'>Tickets</a>");
-
-
-                            */
-
-                          });
-
-                      } else {
-
-                        $(".nodata").html("<p>no data</p>");
-                        //console.log("NO DATA");
+                          }); //end of for each
+          } //End of else if
+                      else {
+                        $("#nodata").html("<h1>No Results</h1>");
+                        // console.log("beserk!");
                       }
-
-
                       console.log(FilteredData);
-      });
+      }); //end of getJSON  
 
       $(".progress").css("display", "none");
-      };
-
-
-
-
-
-    });
-
-
-
-
-
-  function initMap(latC,lonC,current) {
+      
+      }
+  });
+function initMap(latC,lonC,current) {
         var uluru = {lat: latC, lng: lonC};
         var map = new google.maps.Map(document.getElementById('map' + current), {
           zoom: 15,
@@ -239,12 +211,8 @@ $(document).ready(function() {
         });
       }
 
-
-      $(document).ready(function(){
-    $('.parallax').parallax();
-  });
+}); 
 
 
 
-
-  });
+  
