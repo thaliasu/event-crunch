@@ -226,7 +226,7 @@ $(document).on("click", ".addEbtn", function(){
   var url = $("#url").text();
   console.log(url);
 
-  
+
 
   //Ajax request to store this stuff in the database
   $.ajax({
@@ -235,7 +235,7 @@ $(document).on("click", ".addEbtn", function(){
   data: { artist: artist, date: date, venue: venue, url: url }
 })
   .done(function( response ) {
-    alert( "Info: " + response );
+    alert(response);
   });
 
 
@@ -250,6 +250,28 @@ $(document).on("click", ".addEbtnM", function(){
   console.log($(this).attr("id"));
   //get values of the data
   console.log("multiple");
+  
+});
+
+
+
+$(document).on("click", "#removeEvent", function(){
+  console.log($(this).attr("id"));
+  var deleteClicked = 1;
+  //Ajax request to store this stuff in the database
+  $.ajax({
+  method: "POST",
+  url: "delete-event.php",
+  data: { deleteClicked: deleteClicked }
+})
+  .done(function( response ) {
+    location.reload();
+  });
+
+
+
+
+
   
 });
 
