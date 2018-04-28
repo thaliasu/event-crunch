@@ -42,6 +42,9 @@ nav {
     font-weight: 300;
 }
 
+.brand-logo {
+    margin-left: 5px;
+}
 
 /*CSS FOR SINGLE PAGE*/
 
@@ -286,6 +289,11 @@ input:focus {
   #index-banner .section {
     top: 0;
   }
+    
+ .brand-logo {
+    height: inherit;
+}
+
 }
 
 
