@@ -3,7 +3,7 @@
 
   <nav class="z-depth-0">
     <div class="nav-wrapper">
-      <a id="logo-container" href="Home.php" class="brand-logo">EventCrunch</a>
+      <a id="logo-container" href="Home.php" class="brand-logo"><img src="images/eventcrunch1.png" height="65" class="brand-logo"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="Home.php">Home</a></li>
@@ -36,3 +36,5 @@
     </div>
   </nav>
 </html>
+
+
