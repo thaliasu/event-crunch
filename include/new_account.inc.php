@@ -13,11 +13,12 @@
       $pass = $_POST['pwd'];
       $email = $_POST['email'];
 
-      /*echo $first;
-      echo $last;
-      echo $user;
-      echo $pass;
-      echo $email;*/
+      //create sessions to temporarily store user input
+      $_SESSION['temp_first'] = $first;
+      $_SESSION['temp_last'] = $last;
+      $_SESSION['temp_user'] = $user;
+      $_SESSION['temp_pass'] = $pass;
+      $_SESSION['temp_email'] = $email;
 
       //error handlers
       //check for empty fields

@@ -82,7 +82,7 @@
               </div>
               <div class="input-field col s12">
         				<h5>Email</h5>
-        				<input placeholder="<?php echo $_SESSION['email']?>" value="<?php echo $_SESSION['email']?>" name="email" type="email" class="validate" maxlength="30">
+        				<input placeholder="<?php echo $_SESSION['email']?>" value="<?php echo $_SESSION['email']?>" name="email" type="email" class="validate" maxlength="35">
               </div>
               <div class="input-field col s12 center">
         				<button class="waves-effect waves-light btn" type="submit" id="profile" name="update">save profile changes</button>

@@ -33,17 +33,17 @@
               }
             ?>
           </div>
-          <input type="name" name = "fname" id = "fname" placeholder="First Name" maxlength="20">
+          <input type="name" name = "fname" id = "fname" placeholder="First Name" maxlength="20" value="<?php if(isset($_SESSION['temp_first'])){echo $_SESSION['temp_first'];unset($_SESSION['temp_first']);}?>">
           <div id = "fname_error"></div><br />
-          <input type="name" name = "lname" id = "lname" placeholder="Last Name" maxlength="20">
+          <input type="name" name = "lname" id = "lname" placeholder="Last Name" maxlength="20" value="<?php if(isset($_SESSION['temp_last'])){echo $_SESSION['temp_last'];unset($_SESSION['temp_last']);}?>">
           <div id = "lname_error"></div><br />
 
 
-          <input type="name" name = "uid" id = "uid" placeholder="Username" maxlength="20">
+          <input type="name" name = "uid" id = "uid" placeholder="Username" maxlength="20" value="<?php if(isset($_SESSION['temp_user'])){echo $_SESSION['temp_user'];unset($_SESSION['temp_user']);}?>">
           <div id = "uid_error"></div><br />
-          <input type="password" name = "pwd" id = "pwd" placeholder="Password" maxlength="20">
+          <input type="password" name = "pwd" id = "pwd" placeholder="Password" maxlength="20" value="<?php if(isset($_SESSION['temp_pass'])){echo $_SESSION['temp_pass'];unset($_SESSION['temp_pass']);}?>">
           <div id = "pwd_error"></div><br />
-          <input type="name" name = "email" id = "email" placeholder="Email" maxlength="30">
+          <input type="name" name = "email" id = "email" placeholder="Email" maxlength="35" value="<?php if(isset($_SESSION['temp_email'])){echo $_SESSION['temp_email'];unset($_SESSION['temp_email']);}?>">
           <div id = "email_error"></div><br />
           <input type="submit" name = "submit" id = "submit" value="Submit"><br />
           <p class="message" id="font_21">Already have an account?
