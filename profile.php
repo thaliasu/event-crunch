@@ -70,7 +70,7 @@
         				<input placeholder="<?php echo $_SESSION['email']?>" value="<?php echo $_SESSION['email']?>" name="email" type="email" class="validate" maxlength="30">
               </div>
               <div class="input-field col s12 center">
-        				<button class="waves-effect waves-light btn" type="submit" name="update">save profile changes</button>
+        				<button class="waves-effect waves-light btn" type="submit" id="profile" name="update">save profile changes</button>
               </div>
             </form>
   				</section>
@@ -114,7 +114,7 @@
         		
     	</div>'; 
     } else {
-    	echo "<h1>No data</h1>";
+    	echo "<h1>No saved events</h1>";
     }
 
 
