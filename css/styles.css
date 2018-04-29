@@ -54,7 +54,7 @@ body {
 
 #form_heading {
   color: #ff7b00;
-  padding: 15px 0 0 10px;
+  padding: 15px 0 0 0px;
   font-family: 'Nobile', sans-serif;
   font-weight: 100;
   font-size: 1.5em;
@@ -72,6 +72,14 @@ body {
   color: white;
   margin: 0px 57px !important;
   text-align: center;
+}
+
+#user_error {
+  font-family: 'Nobile', sans-serif;
+  width: 266px !important;
+  color: white;
+  text-align: center;
+  margin: 0px 10px 5px 15px;
 }
 
 #font_21 {
@@ -151,6 +159,14 @@ a:hover {
   font-family: 'Nobile', sans-serif;
   font-weight: 100;
   font-size: 1.5em;
+}
+
+#user_error2 {
+  font-family: 'Nobile', sans-serif;
+  width: 266px !important;
+  color: white;
+  text-align: center;
+  margin: 0px 57px 5px 57px;
 }
 
 

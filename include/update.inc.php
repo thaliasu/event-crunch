@@ -7,7 +7,6 @@
     //PHP can only reference names and not IDs
     //Check if 'save profile changes' button has been clicked
     if(isset($_POST['update'])) {
-      //Use prepared statements; running into error with mysqli_real_string_escape, for some reason
       $first = $_POST['fname'];
       $last = $_POST['lname'];
       $user = $_POST['uid'];
@@ -38,7 +37,7 @@
               $result = mysqli_query($conn, $sql);
               $resultCheck = mysqli_num_rows($result);
 
-              if( (!$currentUser) && $resultCheck > 0) {
+              if( (!$currentUser) || $resultCheck > 0) {
                 header("Location: ../profile.php?update=usertaken");
                 exit();
               } else {

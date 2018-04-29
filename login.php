@@ -25,6 +25,14 @@
       <div id="form_box">
         <form action="include/log_in.inc.php" method="POST">
           <p id="form_heading">Login</p>
+          <div id="user_error">
+            <?php
+              if (isset($_SESSION['user_error'])) {
+                echo $_SESSION['user_error'];
+                unset($_SESSION['user_error']);
+              }
+            ?>
+          </div>
           <input type="name" name="uid" placeholder="Username" maxlength="20"><br />
           <input type="password" name="pwd" placeholder="Password" maxlength="20"><br />
           <input type="submit" name="submit" value="Login"><br />

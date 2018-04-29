@@ -18,7 +18,7 @@
 <body>
   <!-- nav bar -->
   <?php include_once 'include/nav.inc.php'; ?>
-  
+
 <!-- parallax banner -->
 
 <div id="index-banner" class="parallax-container">
@@ -57,7 +57,7 @@
 
 
 <div id="output" class="container">
-  
+
 </div>
 
 <div id="nodata" class="center-align"></div>

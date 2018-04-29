@@ -1,12 +1,5 @@
 <?php
     session_start();
-    //Define variables that keep values in the form, if submitted with empty fields
-    /*This code only works if the form is self-referencing
-    $first = "";
-    $empty = "";
-    if(empty($first) || empty($last) || empty($user) || empty($pass) || empty($email)) {
-      $empty = "Please fill out all the fields.";
-    }*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +25,14 @@
       <div id="form_box2">
         <form class="create" action="include/new_account.inc.php" method="POST">
           <p id="form_heading2">Create Account</p>
-          <div id = "empty_error"></div>
+          <div id = "user_error2">
+            <?php
+              if (isset($_SESSION['user_error'])) {
+                echo $_SESSION['user_error'];
+                unset($_SESSION['user_error']);
+              }
+            ?>
+          </div>
           <input type="name" name = "fname" id = "fname" placeholder="First Name" maxlength="20">
           <div id = "fname_error"></div><br />
           <input type="name" name = "lname" id = "lname" placeholder="Last Name" maxlength="20">

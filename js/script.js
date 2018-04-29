@@ -31,7 +31,7 @@ $(document).ready(function() {
 
         //only return shows where venue is = to the city they inputed
         var FilteredData = response.filter(function(elem){ //done
-          return (elem.venue.city == capitalLocationField) 
+          return (elem.venue.city == capitalLocationField)
         }); //done
 
         if(FilteredData.length == 1){  //4 unadded
@@ -49,7 +49,7 @@ $(document).ready(function() {
                 //Artist Name
                 $('<span class="inlinethis">Artist: </span><span id="artist"></span><br><br>').appendTo(newCol);
                 $("#artist").html(FilteredData[0].lineup);
-                
+
 
                 //Date
                 $('<span>Date: </span><span id="date"></span><br><br>').appendTo(newCol);
@@ -109,13 +109,13 @@ $(document).ready(function() {
                               initMap(lat,lon,current);
 
 
-          } //end of if 
+          } //end of if
 
-          else if (FilteredData.length > 1) { 
-                    
+          else if (FilteredData.length > 1) {
+
               console.log(FilteredData);
                           $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
-                          $.each(FilteredData, function(i, evt){ 
+                          $.each(FilteredData, function(i, evt){
                             //append a new row to body
                             var newDiv = $('<div></div>').attr('id', 'newRow' + i);
                             newDiv.attr("class", "row");
@@ -134,7 +134,7 @@ $(document).ready(function() {
 
                 //Date
                 $('<span>Date: </span><span id="date'+ i + '"></span><br><br>').appendTo(newCol);
-                
+
                 var eventDate = FilteredData[i].datetime;
 
                 date = new Date(eventDate);
@@ -175,7 +175,7 @@ $(document).ready(function() {
                  var ticketstatus = FilteredData[i].offers[0] && FilteredData[i].offers[0].url;
                  if(typeof ticketstatus !== "undefined"){
                 $("#tickets"+i).html("<a class='ticketlink' href='"+FilteredData[i].offers[0].url+"' target='_blank'>Tickets</a>");
-              } 
+              }
 
               //Add Event
               $('<button type="button" id="add-event' + i + '" class="waves-effect waves-light btn-large addEbtnM">Add Event</button>').appendTo(newCol);
@@ -201,10 +201,10 @@ $(document).ready(function() {
                         // console.log("beserk!");
                       }
                       console.log(FilteredData);
-      }); //end of getJSON  
+      }); //end of getJSON
 
       $(".progress").css("display", "none");
-      
+
       }
   });
 
@@ -242,7 +242,7 @@ $(document).on("click", ".addEbtn", function(){
 
 
 
-  
+
 });
 
 
@@ -250,7 +250,7 @@ $(document).on("click", ".addEbtnM", function(){
   console.log($(this).attr("id"));
   //get values of the data
   console.log("multiple");
-  
+
 });
 
 
@@ -272,7 +272,7 @@ $(document).on("click", "#removeEvent", function(){
 
 
 
-  
+
 });
 
 
@@ -298,8 +298,4 @@ function initMap(latC,lonC,current) {
         });
       }
 
-}); 
-
-
-
-  
+});

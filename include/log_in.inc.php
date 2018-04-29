@@ -10,11 +10,13 @@
     //Check if inputs are empty
     if(empty($user) || empty($pass)) {
       header("Location: ../login.php?login=empty");
+      $_SESSION['user_error'] = "Please fill out all the fields.";
       exit();
     } else {
       //Prevent accepting invalid code
       if(!preg_match("/^\S{4,20}$/", $user) || !preg_match("/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d])([^\s]){8,16}$/", $pass)) {
         header("Location: ../login.php?signup=invalid");
+        $_SESSION['user_error'] = "Please enter a valid username and password.";
         exit();
       }
       $sql = "SELECT * FROM users WHERE username='$user'";
@@ -22,6 +24,7 @@
       $resultCheck = mysqli_num_rows($result);  //Checks # of rows matching search parameters
       if($resultCheck < 1) {
         header("Location: ../login.php?login=error");  //nonspecific message prevents user from guessing user/pass combos
+        $_SESSION['user_error'] = "Please enter a valid username and password.";
         exit();
       } else {
         //Insert results into array
@@ -29,7 +32,8 @@
           //Dehash
           $hashedPwdCheck = PASSWORD_VERIFY($pass, $row['password']);
           if($hashedPwdCheck==false) {
-            header("Location: ../login.php?login=invalidpass");
+            header("Location: ../login.php?login=error");
+            $_SESSION['user_error'] = "Please enter a valid username and password.";
             exit();
           } elseif ($hashedPwdCheck==true) {
             //else if is done to be extra sure user only logs in if password matches
