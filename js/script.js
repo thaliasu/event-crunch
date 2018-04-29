@@ -31,8 +31,9 @@ $(document).ready(function() {
 
         //only return shows where venue is = to the city they inputed
         var FilteredData = response.filter(function(elem){ //done
-          return (elem.venue.city == capitalLocationField)
+          return (elem.venue.city == capitalLocationField);
         }); //done
+        console.log(FilteredData);
 
         if(FilteredData.length == 1){  //4 unadded
             $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
@@ -81,11 +82,11 @@ $(document).ready(function() {
 
                 //Venue
                 $('<span>Venue: </span><span id="venue"></span><br><br>').appendTo(newCol);
-                
+
                 $("#venue").html(FilteredData[0].venue.name);
 
                 //Status
-                $('<span>Status: </span><span id="status"></span><br><br>').appendTo(newCol);
+                $('<span>Status: </span><span id="status" class="status"></span><br><br>').appendTo(newCol);
                 // var available = FilteredData[0].offers[0].status;
                 // console.log(available);
                 // $("#status").html(FilteredData[0].offers[0].status);
@@ -129,7 +130,7 @@ $(document).ready(function() {
 
           else if (FilteredData.length > 1) {
 
-              console.log("Filtered Data:" + FilteredData);
+
                           $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
                           $.each(FilteredData, function(i, evt){
                             //append a new row to body
@@ -171,17 +172,22 @@ $(document).ready(function() {
 
                 //URL
                 //THIS IS WHERE WE NEED TO FIX SOMETHING!!!!!
-                // $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"?app_id="+bandKey, function(response){
-                // $('<span id="url" class="hidethis"></span>').appendTo(newCol);
-                // $("#url").html(response.thumb_url);
-                // });
+                 // $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"?app_id="+bandKey, function(response2){
+                 //  // var FilteredData = response.filter(function(elem){ //done
+                 //  //  return (elem.venue.city == capitalLocationField)
+                 //  // });
+                 //  console.log("the url JSON response is");
+                 //  console.log(response2);
+                 // // $('<span id="url' + i + '" class="hidethis"></span>').appendTo(newCol);
+                 // // $("#url" + i).html(response.thumb_url);
+                 // });
 
                 //Venue
                 $('<span>Venue: </span><span id="venue'+ i + '"></span><br><br>').appendTo(newCol);
                 $("#venue"+i).html(FilteredData[i].venue.name);
 
                 //Status
-                $('<span>Status: </span><span id="status'+ i + '"></span><br><br>').appendTo(newCol);
+                $('<span>Status: </span><span id="status'+ i + '" class="status"></span><br><br>').appendTo(newCol);
                 //var status = FilteredData[i].offers[0].status;
                 var status = FilteredData[i].offers[0] && FilteredData[i].offers[0].status;
 
@@ -191,7 +197,9 @@ $(document).ready(function() {
                   console.log(CapAvailable);
                   $("#status"+i).html(CapAvailable);
                 } else {
+
                   $("#status"+i).html('Not Available');
+                  $("#status"+i).addClass("unavailable");
                }
 
                 //Tickets
@@ -301,7 +309,7 @@ $(document).on("click", ".addEbtnM", function(){
   .done(function( response ) {
     alert(response);
   });
-  
+
 
 });
 

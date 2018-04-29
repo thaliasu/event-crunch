@@ -148,6 +148,10 @@ nav li:hover {
   background-color: #280d1f !important;
 }
 
+#no_events {
+  text-align: center;
+}
+
 
 #profile:active,
 #profile:hover {
@@ -155,8 +159,12 @@ nav li:hover {
   background-color: #e46e05 !important;
 }
 
-#status{
-    color:green;
+.status{
+    color: green;
+}
+
+.unavailable {
+  color: red !important;
 }
 
 #add-event {
