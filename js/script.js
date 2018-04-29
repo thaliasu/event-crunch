@@ -129,7 +129,7 @@ $(document).ready(function() {
 
           else if (FilteredData.length > 1) {
 
-              console.log(FilteredData);
+              console.log("Filtered Data:" + FilteredData);
                           $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
                           $.each(FilteredData, function(i, evt){
                             //append a new row to body
@@ -168,6 +168,13 @@ $(document).ready(function() {
                 var finalDate = (year+'-' + month + '-'+dt);
 
                 $("#date"+i).html(finalDate);
+
+                //URL
+                //THIS IS WHERE WE NEED TO FIX SOMETHING!!!!!
+                // $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"?app_id="+bandKey, function(response){
+                // $('<span id="url" class="hidethis"></span>').appendTo(newCol);
+                // $("#url").html(response.thumb_url);
+                // });
 
                 //Venue
                 $('<span>Venue: </span><span id="venue'+ i + '"></span><br><br>').appendTo(newCol);
@@ -265,9 +272,36 @@ $(document).on("click", ".addEbtn", function(){
 
 
 $(document).on("click", ".addEbtnM", function(){
-  console.log($(this).attr("id"));
+  var idtotal = $(this).attr("id");
+  console.log(idtotal);
+  var id = idtotal.replace("add-event", "");
   //get values of the data
+  console.log(id);
   console.log("multiple");
+  //get values of the data
+  //get artist name
+  var artist = $("#artist" + id).text();
+  console.log(artist);
+
+  var date = $("#date" + id).text();
+  console.log(date);
+
+  var venue = $("#venue" + id).text();
+  console.log(venue);
+
+  var url = $("#url" + id).text();
+  console.log(url);
+
+  //Ajax request to store this stuff in the database
+  $.ajax({
+  method: "POST",
+  url: "add-event.php",
+  data: { artist: artist, date: date, venue: venue, url: url }
+})
+  .done(function( response ) {
+    alert(response);
+  });
+  
 
 });
 
