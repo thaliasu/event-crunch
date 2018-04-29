@@ -83,7 +83,7 @@ $(function() {
     } else {
       if(pwd_error == false) {
         $('#pwd_error').text('');  //clears out previous error messages
-        $('#pwd_error').append('<p id = "error_msg">Password must contain 1 uppercase and lowercase letter, 1 number, 1 alphanumeric number, and be 8-20 characters long.</p>');
+        $('#pwd_error').append('<p id = "error_msg">Password must contain 1 uppercase and lowercase letter, 1 number, and be 8-20 characters long.</p>');
         $('#pwd_error').show();
         pwd_error = true;
       }

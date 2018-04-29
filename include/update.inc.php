@@ -27,7 +27,7 @@
             || !preg_match("/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d])([^\s]){8,16}$/", $pass)) {
             header("Location: ../profile.php?update=invalid");
             $_SESSION['user_error'] = "Double-check to see if all inputs are valid. Usernames must be 4-20 characters long. Passwords should include
-            1 uppercase and lowercase letter, 1 number, 1 alphanumeric number, and be 8-20 characters long.";
+            1 uppercase and lowercase letter, 1 number, and be 8-20 characters long.";
             exit();
           } else {
             //filter_var checks for a specific string
@@ -37,12 +37,15 @@
               exit();
             } else {
               //check if username is taken
-              $sql = "SELECT username FROM users WHERE username='$user' LIMIT 1";
+              $sql = "SELECT * FROM users WHERE username='$user' LIMIT 1";
               $result = mysqli_query($conn, $sql);
               $resultCheck = mysqli_num_rows($result);
+              $row = mysqli_fetch_array($result);
+              $userCheck = $row['username'];
 
-              if( $result == $currentUser && $resultCheck > 0 ) {
+              if( $userCheck != $currentUser && $resultCheck > 0 ) {
                 header("Location: ../profile.php?update=usertaken");
+                echo $userCheck;
                 $_SESSION['user_error'] = "The username you submitted is taken.";
                 exit();
               } else {
