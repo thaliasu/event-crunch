@@ -81,11 +81,27 @@ $(document).ready(function() {
 
                 //Venue
                 $('<span>Venue: </span><span id="venue"></span><br><br>').appendTo(newCol);
+                
                 $("#venue").html(FilteredData[0].venue.name);
 
                 //Status
                 $('<span>Status: </span><span id="status"></span><br><br>').appendTo(newCol);
-                $("#status").html(FilteredData[0].offers[0].status);
+                // var available = FilteredData[0].offers[0].status;
+                // console.log(available);
+                // $("#status").html(FilteredData[0].offers[0].status);
+
+
+                var status = FilteredData[0].offers[0] && FilteredData[0].offers[0].status;
+                if(typeof status !== "undefined"){
+                  var available = FilteredData[0].offers[0].status;
+                  var CapAvailable = available.substr(0,1).toUpperCase()+available.substr(1);
+                  console.log(CapAvailable);
+                  $("#status").html(CapAvailable);
+                } else {
+                  $("#status").html('Not Available');
+               }
+
+
 
                 //Tickets
                 $('<span id="tickets"></span><br><br>').appendTo(newCol);
@@ -163,8 +179,10 @@ $(document).ready(function() {
                 var status = FilteredData[i].offers[0] && FilteredData[i].offers[0].status;
 
                 if(typeof status !== "undefined"){
-
-                  $("#status"+i).html(FilteredData[i].offers[0].status);
+                  var available = FilteredData[i].offers[0].status;
+                  var CapAvailable = available.substr(0,1).toUpperCase()+available.substr(1);
+                  console.log(CapAvailable);
+                  $("#status"+i).html(CapAvailable);
                 } else {
                   $("#status"+i).html('Not Available');
                }
