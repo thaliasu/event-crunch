@@ -130,11 +130,7 @@ $(document).ready(function() {
 
           else if (FilteredData.length > 1) {
 
-<<<<<<< HEAD
 
-=======
-                
->>>>>>> 120d5e94d3ea9b2daa943a2dfe6b4b0fa592a94d
                           $('<h1 class="center-align">'+response[0].lineup[0]+'</h1>').appendTo('#output');
                           $.each(FilteredData, function(i, evt){
                             //append a new row to body
@@ -179,11 +175,7 @@ $(document).ready(function() {
                  // $.getJSON("https://rest.bandsintown.com/artists/"+artistField+"?app_id="+bandKey, function(response2){
                  //  // var FilteredData = response.filter(function(elem){ //done
                  //  //  return (elem.venue.city == capitalLocationField)
-<<<<<<< HEAD
                  //  // });
-=======
-                 //  // }); 
->>>>>>> 120d5e94d3ea9b2daa943a2dfe6b4b0fa592a94d
                  //  console.log("the url JSON response is");
                  //  console.log(response2);
                  // // $('<span id="url' + i + '" class="hidethis"></span>').appendTo(newCol);
@@ -205,11 +197,7 @@ $(document).ready(function() {
                   console.log(CapAvailable);
                   $("#status"+i).html(CapAvailable);
                 } else {
-<<<<<<< HEAD
 
-=======
-                  
->>>>>>> 120d5e94d3ea9b2daa943a2dfe6b4b0fa592a94d
                   $("#status"+i).html('Not Available');
                   $("#status"+i).addClass("unavailable");
                }
