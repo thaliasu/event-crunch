@@ -155,8 +155,12 @@ nav li:hover {
   background-color: #e46e05 !important;
 }
 
-#status{
-    color:green;
+.status{
+    color: green;
+}
+
+.unavailable {
+  color: red !important;
 }
 
 #add-event {
