@@ -47,7 +47,22 @@
     	<div class="row">
     		<div id="profile-info" class="col s12">
   				<section><h4 class="center-align">Profile Info</h4>
-    				<br>
+    				<div class="center-align" id="profile_user_error">
+              <?php
+              if (isset($_SESSION['user_error'])) {
+                echo $_SESSION['user_error'];
+                unset($_SESSION['user_error']);
+              }
+              ?>
+            <span id = "profile_user_success">
+              <?php
+              if (isset($_SESSION['user_success'])) {
+                echo $_SESSION['user_success'];
+                unset($_SESSION['user_success']);
+              }
+              ?>
+            </span>
+            </div><br>
             <form action="include/update.inc.php" method="POST">
               <div class="input-field col s12 l6">
         				<h5>First Name</h5>
@@ -86,10 +101,10 @@
         			//for each row in the database make a new card with the info
         			$sql = "SELECT * FROM events WHERE username = '$userName'";
         			$results = mysqli_query($conn, $sql);
-        			
+
         			if(mysqli_num_rows($results) == 1) {
         				$row = mysqli_fetch_assoc($results);
-		    				
+
         				echo '<div class="col s12 m4 l4">
         			<section>
            			<br>
@@ -111,8 +126,8 @@
         				</div>
         			</section>
         		</div>
-        		
-    	</div>'; 
+
+    	</div>';
     } else {
     	echo "<h1>No saved events</h1>";
     }
@@ -123,25 +138,25 @@
 
 
 
-<!-- 
+<!--
 		    				echo '<tr>';
 		    					echo '<td>' . $row['artist'] . '</td>';
 		    					echo '<td>' . $row['thumbail'] . '</td>';
 		    				echo '</tr>';
-						
-        			} 
+
+        			}
         			else if(mysqli_num_rows($results) > 1) {
-        				
+
         				while($row = mysqli_fetch_array($results)){
 		    				echo '<tr>';
 		    					foreach($row as $field) {
 		       						echo '<td>' . htmlspecialchars($field['artist']) . '</td>';
 		    						echo '<td>' . htmlspecialchars($field['thumbail']) . '</td>';
 		    				}
-		    					
+
 		    				echo '</tr>';
 						}
-        			
+
         			}
         			else  {
         				echo "<h1>No data</h1>";
@@ -151,7 +166,7 @@
 
 
 
-<!-- 
+<!--
       //   			if(!empty($results)) {
       //   				while ($row = mysqli_fetch_array($results)) {
 		    // 				echo '<tr>';
@@ -163,11 +178,11 @@
       //   			} else {
       //   				echo "<h1>No data</h1>";
       //   			}
-        			
-	
 
 
-        			
+
+
+
 
 					mysqli_close($conn);
 
@@ -199,7 +214,7 @@
         				</div>
         			</section>
         		</div>
-        		
+
     	</div> -->
     </div>
     <br>

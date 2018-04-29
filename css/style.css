@@ -31,7 +31,7 @@ p {
 
 .ticketlink {
   color: #e46e05;
-  text-decoration-line: underline;    
+  text-decoration-line: underline;
 
 }
 
@@ -90,10 +90,6 @@ nav li:hover {
   background-color: #e46e05 !important;
 }
 
-.brand-logo {
-
-}
-
 .wrap {
   margin-top: 20px;
   text-align: center;
@@ -134,16 +130,29 @@ nav li:hover {
   color: #e46e05 ;
 }
 
+/*CSS for profile page*/
+#profile_welcome {
+  padding: 0px;
+}
+
+#profile_user_error {
+  color: red;
+}
+
+#profile_user_success {
+  color: green;
+}
+
 #profile {
   outline: 0;
-  background-color: #280d1f !important; 
+  background-color: #280d1f !important;
 }
 
 
 #profile:active,
 #profile:hover {
   outline: 0;
-  background-color: #e46e05 !important;  
+  background-color: #e46e05 !important;
 }
 
 #status{
@@ -326,7 +335,7 @@ input:focus {
   #index-banner .section {
     top: 0;
   }
-    
+
  .brand-logo {
     height: inherit;
 }
@@ -349,11 +358,6 @@ footer.page-footer {
 
 #hamburger {
   color: white;
-}
-
-/*CSS for profile page*/
-#profile_welcome {
-  padding: 0px;
 }
 
 /* label underline focus color */
