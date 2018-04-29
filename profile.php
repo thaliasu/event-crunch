@@ -129,7 +129,7 @@
 
     	</div>';
     } else {
-    	echo "<h1>No saved events</h1>";
+    	echo "<h1 id='no_events'>No saved events</h1>";
     }
 
 

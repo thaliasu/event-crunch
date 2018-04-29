@@ -32,7 +32,7 @@
           <input type="text" name="artist-search" id="artist-search" placeholder="search for an artist...">
           <input type="text" name="location" id="location" placeholder="search for a city..."><span class="error"></span>
             <div class="wrap">
-                <a class="button red" href="#" id="get-event">Crunch</a>
+                <a class="button red" href="#result_container" id="get-event">Crunch</a>
             </div>
         </div>
       </div>
@@ -55,12 +55,11 @@
       <div class="indeterminate"></div>
   </div>
 
+<div id = "result_container">
+  <div id="output" class="container"></div>
 
-<div id="output" class="container">
-
+  <div id="nodata" class="center-align"></div>
 </div>
-
-<div id="nodata" class="center-align"></div>
 
 
 
