@@ -30,7 +30,13 @@ p {
 }
 
 .ticketlink {
-  color: white;
+  color: #e46e05;
+  text-decoration-line: underline;    
+
+}
+
+.ticketlink:hover {
+    opacity: 0.5;
 }
 
 
@@ -118,6 +124,7 @@ nav li:hover {
   box-shadow: 1px 6px 15px rgba(0,0,0,0.5);
 }
 
+
 .red {
     color: white;
 }
@@ -125,6 +132,36 @@ nav li:hover {
 
 .button-collapse {
   color: #e46e05 ;
+}
+
+#profile {
+  outline: 0;
+  background-color: #280d1f !important; 
+}
+
+
+#profile:active,
+#profile:hover {
+  outline: 0;
+  background-color: #e46e05 !important;  
+}
+
+#status{
+    color:green;
+}
+
+#add-event {
+  outline: 0;
+  background-color: #280d1f !important;
+
+}
+
+
+
+#add-event:active,
+#add-event:hover {
+  outline: 0;
+  background-color: #e46e05 !important;
 }
 
 
