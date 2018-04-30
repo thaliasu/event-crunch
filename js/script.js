@@ -12,7 +12,11 @@ $(document).ready(function() {
   $("#get-event").click(function(e){ //1 unadded
     $("#output").html("");
     $("#nodata").html("");
-    e.preventDefault();
+
+    //autoscroll
+    e.preventDefault(); //should prevent abrupt jump to id
+    $("html, body").animate({scrollTop: $("#result_container").offset().top }, 500);
+
     $(".progress").css("display", "block");
     //prevent empty fields
      if($.trim($('#artist-search').val()) == ''){ //2 unadded
