@@ -1,23 +1,27 @@
 <?php
 	include 'include/connect.inc.php';
 	session_start();
-	
+
 	$artist = $_POST['artist'];
 	$venue = $_POST['venue'];
 	$url = $_POST['url'];
+		if (empty($url)) {
+			$url = "./images/default.jpg";
+		}
 	$date = $_POST['date'];
-	$username = $_SESSION['user']; 
+	$username = $_SESSION['user'];
 	// echo $artist;
 	// echo $venue;
 	// echo $url;
 	// echo $date;
 	// echo $username;
 
-	
-	
+
+
 	$dupesql = "SELECT * FROM events where (username = '$username' AND artist = '$artist' AND thumbail = '$url' AND date = '$date')";
 
 	$duperaw = mysqli_query($conn, $dupesql);
+	if (!$duperaw) die($conn->error);
 
 	if (mysqli_num_rows($duperaw) > 0) {
 		$duplicate = "Event already added";
@@ -30,7 +34,7 @@
 		echo $Added;
 	}
 
-	
+
 
 
 	//DATABASE

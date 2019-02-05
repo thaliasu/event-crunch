@@ -182,8 +182,8 @@ $(document).ready(function() {
                  //  // });
                  //  console.log("the url JSON response is");
                  //  console.log(response2);
-                 // // $('<span id="url' + i + '" class="hidethis"></span>').appendTo(newCol);
-                 // // $("#url" + i).html(response.thumb_url);
+                  $('<span id="url' + i + '" class="hidethis"></span>').appendTo(newCol);
+                  $("#url" + i).html("");
                  // });
 
                 //Venue

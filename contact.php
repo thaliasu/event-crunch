@@ -133,7 +133,7 @@
     </div>
     <br>
 
-   <div class="divider"></div>
+ 
 
 
 
@@ -141,7 +141,7 @@
 	<footer class="page-footer">
 	          <div class="footer-copyright">
 	            <div class="white-text container">
-	            &#64; 2018 Copyright
+	           2018 Copyright EventCrunch
 	            </div>
 	          </div>
     </footer>

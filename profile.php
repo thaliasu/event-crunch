@@ -102,25 +102,23 @@
         			$sql = "SELECT * FROM events WHERE username = '$userName'";
         			$results = mysqli_query($conn, $sql);
 
-        			if(mysqli_num_rows($results) == 1) {
-        				$row = mysqli_fetch_assoc($results);
-
+        			while ($row = $results->fetch_object()) {
         				echo '<div class="col s12 m4 l4">
         			<section>
            			<br>
         				<div class="card">
         					<div class="card-image waves-effect waves-block waves-light">
-        						<img class="activator" src="' . $row['thumbail'] . '" alt="event image">
+        						<img class="activator" src="' . $row->thumbail . '" alt="event image">
         					</div>
         					<div class="card-content">
-        						<span class="card-title activator grey-text text-darken-4">' . $row["artist"] . '<i class="material-icons right">more_vert</i></span>
-        						<p class="grey-text text-darken-4">'. $row["date"] . '</p>
+        						<span class="card-title activator grey-text text-darken-4">' . $row->artist . '<i class="material-icons right">more_vert</i></span>
+        						<p class="grey-text text-darken-4">'. $row->date . '</p>
         						<a id="removeEvent">Delete Event</a>
         					</div>
         					<div class="card-reveal">
-        						<span class="card-title grey-text text-darken-4">' . $row["artist"] . '<i class="material-icons right">close</i></span>
-        						<p class="grey-text text-darken-4">'. $row["date"] . '</p>
-        						<p class="grey-text text-darken-4">' . $row["venue"] . '</p>
+        						<span class="card-title grey-text text-darken-4">' . $row->artist . '<i class="material-icons right">close</i></span>
+        						<p class="grey-text text-darken-4">'. $row->date . '</p>
+        						<p class="grey-text text-darken-4">' . $row->venue . '</p>
         						<a  id="removeEvent">Delete Event</a>
         					</div>
         				</div>
@@ -128,8 +126,8 @@
         		</div>
 
     	</div>';
-    } else {
-    	echo "<h1 id='no_events'>No saved events</h1>";
+    } if (!$results) {
+    	echo "<h1>No saved events</h1>";
     }
 
 
@@ -219,7 +217,7 @@
     </div>
     <br>
 
-   <div class="divider"></div>
+   
 
 
 
@@ -227,7 +225,7 @@
 	<footer class="page-footer">
 	          <div class="footer-copyright">
 	            <div class="white-text container">
-	            &#64; 2018 Copyright
+	             2018 Copyright EventCrunch
 	            </div>
 	          </div>
     </footer>
