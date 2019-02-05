@@ -1,8 +1,8 @@
 <?php
   //connects to Event Crunch's database
-  /*$username = "th402780";
-  $password = "midKnight6^";
-  $dbname = "th402780";*/
+  /*$username = "";
+  $password = "";
+  $dbname = "";*/
 
   //For local testing:
   $username = "root";
