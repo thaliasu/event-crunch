@@ -9,41 +9,33 @@
 			$url = "./images/default.jpg";
 		}
 	$date = $_POST['date'];
-	$username = $_SESSION['user'];
+	
 	// echo $artist;
 	// echo $venue;
 	// echo $url;
 	// echo $date;
 	// echo $username;
 
+	if(isset($_SESSION['user'])) {
+		$username = $_SESSION['user'];
 
+		$dupesql = "SELECT * FROM events where (username = '$username' AND artist = '$artist' AND thumbail = '$url' AND date = '$date')";
 
-	$dupesql = "SELECT * FROM events where (username = '$username' AND artist = '$artist' AND thumbail = '$url' AND date = '$date')";
+		$duperaw = mysqli_query($conn, $dupesql);
+		if (!$duperaw) die($conn->error);
 
-	$duperaw = mysqli_query($conn, $dupesql);
-	if (!$duperaw) die($conn->error);
+		if (mysqli_num_rows($duperaw) > 0) {
+			$duplicate = "Event already added";
+			echo $duplicate;
 
-	if (mysqli_num_rows($duperaw) > 0) {
-		$duplicate = "Event already added";
-		echo $duplicate;
-
+		} else {
+			$sql = "INSERT INTO events (username, artist, thumbail, date, venue) VALUES ('$username', '$artist', '$url', '$date', '$venue')";
+			mysqli_query ($conn, $sql);
+			$Added = "Added Event";
+			echo $Added;
+		}
 	} else {
-		$sql = "INSERT INTO events (username, artist, thumbail, date, venue) VALUES ('$username', '$artist', '$url', '$date', '$venue')";
-		mysqli_query ($conn, $sql);
-		$Added = "Added Event";
-		echo $Added;
+		echo 'You must be logged in to add events.';
 	}
-
-
-
-
-	//DATABASE
-		//USERS
-			//STORES ID
-		//EVENTS
-			//STORES INFO
-	//HOW TO LINK 2?
-
-
 
 ?>

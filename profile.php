@@ -105,7 +105,6 @@
         			while ($row = $results->fetch_object()) {
         				echo '<div class="col s12 m4 l4">
         			<section>
-           			<br>
         				<div class="card">
         					<div class="card-image waves-effect waves-block waves-light">
         						<img class="activator" src="' . $row->thumbail . '" alt="event image">
@@ -113,13 +112,13 @@
         					<div class="card-content">
         						<span class="card-title activator grey-text text-darken-4">' . $row->artist . '<i class="material-icons right">more_vert</i></span>
         						<p class="grey-text text-darken-4">'. $row->date . '</p>
-        						<a id="removeEvent">Delete Event</a>
+                    <a id="removeEvent">Delete Event</a>
         					</div>
         					<div class="card-reveal">
         						<span class="card-title grey-text text-darken-4">' . $row->artist . '<i class="material-icons right">close</i></span>
         						<p class="grey-text text-darken-4">'. $row->date . '</p>
         						<p class="grey-text text-darken-4">' . $row->venue . '</p>
-        						<a  id="removeEvent">Delete Event</a>
+        						<a id="removeEvent">Delete Event</a>
         					</div>
         				</div>
         			</section>
@@ -132,88 +131,6 @@
 
 
     	?>
-
-
-
-
-<!--
-		    				echo '<tr>';
-		    					echo '<td>' . $row['artist'] . '</td>';
-		    					echo '<td>' . $row['thumbail'] . '</td>';
-		    				echo '</tr>';
-
-        			}
-        			else if(mysqli_num_rows($results) > 1) {
-
-        				while($row = mysqli_fetch_array($results)){
-		    				echo '<tr>';
-		    					foreach($row as $field) {
-		       						echo '<td>' . htmlspecialchars($field['artist']) . '</td>';
-		    						echo '<td>' . htmlspecialchars($field['thumbail']) . '</td>';
-		    				}
-
-		    				echo '</tr>';
-						}
-
-        			}
-        			else  {
-        				echo "<h1>No data</h1>";
-        			} -->
-
-
-
-
-
-<!--
-      //   			if(!empty($results)) {
-      //   				while ($row = mysqli_fetch_array($results)) {
-		    // 				echo '<tr>';
-		    // 				foreach($row as $field) {
-		    //     				echo '<td>' . htmlspecialchars($field) . '</td>';
-		    // 				}
-		    // 				echo '</tr>';
-						// }
-      //   			} else {
-      //   				echo "<h1>No data</h1>";
-      //   			}
-
-
-
-
-
-
-					mysqli_close($conn);
-
-        		?> -->
-
-
-
-        		<!-- <div class="col s12 m4 l4">
-        			<section>
-           			<br>
-        				<div class="card">
-        					<div class="card-image waves-effect waves-block waves-light">
-        						<img class="activator" src="images/audience.jpg" alt="event image">
-        					</div>
-        					<div class="card-content">
-        						<span class="card-title activator grey-text text-darken-4">Battle Of The Bands<i class="material-icons right">more_vert</i></span>
-        						<p class="grey-text text-darken-4">4/21/18</p>
-        						<a href="#">Delete Event</a>
-        					</div>
-        					<div class="card-reveal">
-        						<span class="card-title grey-text text-darken-4">Battle of the Bands<i class="material-icons right">close</i></span>
-        						<p class="grey-text text-darken-4">4/21/18</p>
-        						<p class="grey-text text-darken-4">The Hole In The Wall</p>
-        						<p class="grey-text text-darken-4">123 Apple St. Orlando, FL 32817</p>
-        						<p class="grey-text text-darken-4">Doors open: 7:00 pm</p>
-        						<p class="grey-text text-darken-4">Event starts: 8:00 pm</p>
-        						<a href="#">Delete Event</a>
-        					</div>
-        				</div>
-        			</section>
-        		</div>
-
-    	</div> -->
     </div>
     <br>
 

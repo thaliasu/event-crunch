@@ -33,10 +33,10 @@
           $hashedPwdCheck = PASSWORD_VERIFY($pass, $row['password']);
           if($hashedPwdCheck==false) {
             header("Location: ../login.php?login=error");
-            $_SESSION['user_error'] = "Please enter a valid username and password.";
+            $_SESSION['user_error'] = "Please enter a valid password.";
             exit();
           } elseif ($hashedPwdCheck==true) {
-            //else if is done to be extra sure user only logs in if password matches
+            //elseif is done to be extra sure user only logs in if password matches
             $_SESSION['logged_in'] = $row['id'];
             $_SESSION['first'] = $row['firstName'];
             $_SESSION['last'] = $row['lastName'];

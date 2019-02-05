@@ -1,13 +1,13 @@
 <?php
   //connects to Event Crunch's database
-  $username = "th402780";
+  /*$username = "th402780";
   $password = "midKnight6^";
-  $dbname = "th402780";
+  $dbname = "th402780";*/
 
-  /*For local testing:
+  //For local testing:
   $username = "root";
   $password = "";
-  $dbname = "th402780";*/
+  $dbname = "event-crunch";
 
   $conn = mysqli_connect("localhost", "$username", "$password", "$dbname") or die(mysqli_connect_error());
 

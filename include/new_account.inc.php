@@ -55,6 +55,7 @@
                 //Insert user into db
                 $sql = "INSERT INTO users(firstName, lastName, username, password, email) VALUES ('$first', '$last', '$user', '$hashedPwd', '$email')";
                 mysqli_query($conn, $sql);
+                unset($_SESSION['temp_first'], $_SESSION['temp_last'], $_SESSION['temp_user'], $_SESSION['temp_pass'], $_SESSION['temp_email']);
                 header("Location: ../login.php");
                 exit();
               }
