@@ -1,9 +1,9 @@
 <?php
   //connects to Event Crunch's database
-  /*$host = "ec2-54-83-17-151.compute-1.amazonaws.com";
-  $username = "uqmzndwrlxrmnt";
-  $password = "420f3dd0b88596486eb510637051e2b66706093b9dfb60add35a9e36883fd295";
-  $dbname = "db1begjoogpmj9";*/
+  $host = "us-cdbr-iron-east-03.cleardb.net";
+  $username = "b4df918d1e814d";
+  $password = "d7985f81";
+  $dbname = "heroku_3623d8589c0f549";
 
   //For local testing:
   /*$host = "localhost";
@@ -11,7 +11,7 @@
   $password = "";
   $dbname = "event-crunch";*/
 
-  $conn = pg_connect("host=ec2-54-83-17-151.compute-1.amazonaws.com port=5432 dbname=db1begjoogpmj9 user=uqmzndwrlxrmnt password=420f3dd0b88596486eb510637051e2b66706093b9dfb60add35a9e36883fd295") or die("Could not connect");
+  $conn = mysqli_connect("$host", "$username", "$password", "$dbname") or die(mysqli_connect_error());
 
   /*Test connection, if doubtful:
   Test to insert data into table using connect.inc.php successful
