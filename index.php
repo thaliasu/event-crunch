@@ -13,6 +13,14 @@
       <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          if(typeof window.localStorage !== "undefined" && !localStorage.getItem('visited')) {
+            localStorage.setItem('visited', true);
+            alert("Try typing in \"SZA\" and \"New York\" to test features.");
+          }
+        });
+      </script>
     </head>
 
 <body>
@@ -78,7 +86,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
       <script src="js/script.js"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp-6VY-wJJpRRi32-TmBXu6aOUbTJiouQ&callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw8UQXWLuIwgXvhpVumM8HRTGj-jgokac&callback=initMap">
     </script>
 
 
